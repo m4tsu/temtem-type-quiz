@@ -1,14 +1,4 @@
-import {
-  Box,
-  Button,
-  Card,
-  Center,
-  Flex,
-  Grid,
-  Image,
-  Text,
-  Title,
-} from "@mantine/core";
+import { Button, Card, Flex, Grid, Image, Text, Title } from "@mantine/core";
 import { useSingleTypeQuiz } from "./useSingleQuiz";
 import {
   TemType,
@@ -29,7 +19,7 @@ export const SingleTypeQuiz = () => {
     answerCurrentProblem,
     reset,
   } = useSingleTypeQuiz();
-  console.log({ currentProblem, problems, round });
+
   return (
     <Flex direction="column" gap="lg" justify="center">
       <Title order={2} size="h3" align="center">

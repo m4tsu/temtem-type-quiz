@@ -1,4 +1,4 @@
-import { Container, Flex, Header, Text, Title } from "@mantine/core";
+import { Container, Flex, Header, Title } from "@mantine/core";
 import { SingleTypeQuiz } from "./feature/tem-type-quiz/SingleTypeQuiz";
 
 function App() {
