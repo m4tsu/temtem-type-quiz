@@ -1,15 +1,15 @@
 import { Button, Card, Flex, Grid, Image, Text } from "@mantine/core";
-import { useSingleTypeQuiz } from "./useSingleQuiz";
 import {
   TemType,
   TemTypeEffectiveNess,
-  calculateEffectiveness,
-} from "../../models/tem-type";
+  calculateEffectivenessAgainstMultiple,
+} from "../../../models/tem-type";
+import { useMultipleTypeQuiz } from "./useMultipleTypeQuiz";
 
 const typeImage = (type: TemType) => `/images/types/${type}.png`;
 const EffectivenessList = [0.5, 1, 2] satisfies TemTypeEffectiveNess[];
 
-export const SingleTypeQuiz = () => {
+export const MultipleTypeQuiz = () => {
   const {
     round,
     problems,
@@ -19,7 +19,7 @@ export const SingleTypeQuiz = () => {
     answerCurrentProblem,
     reset,
     regenerateProblems,
-  } = useSingleTypeQuiz();
+  } = useMultipleTypeQuiz();
 
   return (
     <Flex direction="column" gap="lg" justify="center">
@@ -38,7 +38,23 @@ export const SingleTypeQuiz = () => {
         <Flex sx={{ width: "100%" }} align="center" justify="center">
           <Image src={typeImage(currentProblem.quiz.attack)} width={60} />
           <Image src="/arrow-right-solid.svg" width={40} />
-          <Image src={typeImage(currentProblem.quiz.defense)} width={60} />
+          {currentProblem.quiz.defense.length === 1 ? (
+            <Image src={typeImage(currentProblem.quiz.defense[0])} width={60} />
+          ) : (
+            <Flex align="center">
+              <Image
+                src={typeImage(currentProblem.quiz.defense[0])}
+                width={60}
+              />
+              <Text size="xl" fw="bold">
+                +
+              </Text>
+              <Image
+                src={typeImage(currentProblem.quiz.defense[1])}
+                width={60}
+              />
+            </Flex>
+          )}
         </Flex>
         {isEnded ? (
           <Flex direction="column" gap="md">
@@ -73,10 +89,29 @@ export const SingleTypeQuiz = () => {
                     >
                       <Image src={typeImage(problem.quiz.attack)} width={40} />
                       <Image src="/arrow-right-solid.svg" width={25} />
-                      <Image src={typeImage(problem.quiz.defense)} width={40} />
+                      {problem.quiz.defense.length === 1 ? (
+                        <Image
+                          src={typeImage(problem.quiz.defense[0])}
+                          width={40}
+                        />
+                      ) : (
+                        <Flex align="center">
+                          <Image
+                            src={typeImage(problem.quiz.defense[0])}
+                            width={40}
+                          />
+                          <Text size="xl" fw="bold">
+                            +
+                          </Text>
+                          <Image
+                            src={typeImage(problem.quiz.defense[1])}
+                            width={40}
+                          />
+                        </Flex>
+                      )}
                     </Flex>
                     <Text align="center" size="xl" fw="bold">
-                      {calculateEffectiveness(
+                      {calculateEffectivenessAgainstMultiple(
                         problem.quiz.attack,
                         problem.quiz.defense
                       )}
