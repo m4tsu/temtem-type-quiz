@@ -1,4 +1,4 @@
-import { Button, Card, Flex, Grid, Image, Text } from "@mantine/core";
+import { Button, Card, Divider, Flex, Grid, Image, Text } from "@mantine/core";
 import { useSingleTypeQuiz } from "./useSingleQuiz";
 import {
   TemType,
@@ -40,6 +40,7 @@ export const SingleTypeQuiz = () => {
           <Image src="/arrow-right-solid.svg" width={40} />
           <Image src={typeImage(currentProblem.quiz.defense)} width={60} />
         </Flex>
+        <Divider />
         {isEnded ? (
           <Flex direction="column" gap="md">
             <Grid grow>
@@ -65,7 +66,7 @@ export const SingleTypeQuiz = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Card bg={problem.status === "correct" ? "green" : "red"}>
+                  <Card bg={problem.status === "correct" ? "green.6" : "red.6"}>
                     <Flex
                       sx={{ width: "100%" }}
                       align="center"
@@ -75,7 +76,7 @@ export const SingleTypeQuiz = () => {
                       <Image src="/arrow-right-solid.svg" width={25} />
                       <Image src={typeImage(problem.quiz.defense)} width={40} />
                     </Flex>
-                    <Text align="center" size="xl" fw="bold">
+                    <Text align="center" size="xl" fw="bold" color="gray.1">
                       {calculateEffectiveness(
                         problem.quiz.attack,
                         problem.quiz.defense

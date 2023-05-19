@@ -11,9 +11,11 @@ type Problem = {
   status: "correct" | "incorrect" | "unanswered";
 };
 
+const MAX_ROUND = 12;
+
 const generateProblems = () => {
   const problems: Problem[] = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < MAX_ROUND; i++) {
     problems.push({
       quiz: generateMultipleTypeQuiz(),
       status: "unanswered",
@@ -25,8 +27,6 @@ const generateProblems = () => {
 const resetProblems = (problems: Problem[]): Problem[] => {
   return problems.map((p) => ({ ...p, status: "unanswered" }));
 };
-
-const MAX_ROUND = 10;
 
 export const useMultipleTypeQuiz = () => {
   const [round, setRound] = useState(1);

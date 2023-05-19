@@ -1,4 +1,4 @@
-import { Button, Card, Flex, Grid, Image, Text } from "@mantine/core";
+import { Button, Card, Divider, Flex, Grid, Image, Text } from "@mantine/core";
 import {
   TemType,
   TemTypeEffectiveNess,
@@ -56,6 +56,7 @@ export const MultipleTypeQuiz = () => {
             </Flex>
           )}
         </Flex>
+        <Divider />
         {isEnded ? (
           <Flex direction="column" gap="md">
             <Grid grow>
@@ -81,7 +82,7 @@ export const MultipleTypeQuiz = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Card bg={problem.status === "correct" ? "green" : "red"}>
+                  <Card bg={problem.status === "correct" ? "green.6" : "red.6"}>
                     <Flex
                       sx={{ width: "100%" }}
                       align="center"
@@ -110,7 +111,7 @@ export const MultipleTypeQuiz = () => {
                         </Flex>
                       )}
                     </Flex>
-                    <Text align="center" size="xl" fw="bold">
+                    <Text align="center" size="xl" fw="bold" color="gray.1">
                       {calculateEffectivenessAgainstMultiple(
                         problem.quiz.attack,
                         problem.quiz.defense

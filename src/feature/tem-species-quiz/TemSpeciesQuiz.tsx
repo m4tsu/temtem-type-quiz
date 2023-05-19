@@ -93,7 +93,7 @@ export const TemSpeciesQuiz: FC = () => {
                     width={50}
                     bg="dark.6"
                   />
-                  <Text align="center" fw="bold" color="dark">
+                  <Text align="center" fw="bold" color="gray.1">
                     {problem.species.name}
                   </Text>
                   <Flex justify="center" gap="xs">
