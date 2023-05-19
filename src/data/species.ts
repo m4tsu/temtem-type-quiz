@@ -1,18 +1,12 @@
 import { Species } from "../models/species";
 
 // ./species.json からコピペして型付ける
-export const species = [
+export const speciesList = [
   {
     number: 1,
     name: "Mimit",
     types: ["Digital"],
     icon: "/images/portraits/temtem/large/Mimit.png",
-  },
-  {
-    number: 2,
-    name: "Oree",
-    types: ["Digital"],
-    icon: "/images/portraits/temtem/large/Oree.png",
   },
   {
     number: 3,
@@ -27,40 +21,16 @@ export const species = [
     icon: "/images/portraits/temtem/large/Chromeon.png",
   },
   {
-    number: 5,
-    name: "Halzhi",
-    types: ["Digital"],
-    icon: "/images/portraits/temtem/large/Halzhi.png",
-  },
-  {
     number: 6,
     name: "Molgu",
     types: ["Digital"],
     icon: "/images/portraits/temtem/large/Molgu.png",
   },
   {
-    number: 7,
-    name: "Platypet",
-    types: ["Water", "Toxic"],
-    icon: "/images/portraits/temtem/large/Platypet.png",
-  },
-  {
-    number: 8,
-    name: "Platox",
-    types: ["Water", "Toxic"],
-    icon: "/images/portraits/temtem/large/Platox.png",
-  },
-  {
     number: 9,
     name: "Platimous",
     types: ["Water", "Toxic"],
     icon: "/images/portraits/temtem/large/Platimous.png",
-  },
-  {
-    number: 10,
-    name: "Swali",
-    types: ["Nature"],
-    icon: "/images/portraits/temtem/large/Swali.png",
   },
   {
     number: 11,
@@ -81,28 +51,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Gharunder.png",
   },
   {
-    number: 14,
-    name: "Mosu",
-    types: ["Melee"],
-    icon: "/images/portraits/temtem/large/Mosu.png",
-  },
-  {
     number: 15,
     name: "Magmut",
     types: ["Melee", "Fire"],
     icon: "/images/portraits/temtem/large/Magmut.png",
-  },
-  {
-    number: 16,
-    name: "Paharo",
-    types: ["Wind"],
-    icon: "/images/portraits/temtem/large/Paharo.png",
-  },
-  {
-    number: 17,
-    name: "Paharac",
-    types: ["Wind"],
-    icon: "/images/portraits/temtem/large/Paharac.png",
   },
   {
     number: 18,
@@ -111,22 +63,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Granpah.png",
   },
   {
-    number: 19,
-    name: "Ampling",
-    types: ["Electric"],
-    icon: "/images/portraits/temtem/large/Ampling.png",
-  },
-  {
     number: 20,
     name: "Amphatyr",
     types: ["Electric", "Nature"],
     icon: "/images/portraits/temtem/large/Amphatyr.png",
-  },
-  {
-    number: 21,
-    name: "Bunbun",
-    types: ["Earth", "Crystal"],
-    icon: "/images/portraits/temtem/large/Bunbun.png",
   },
   {
     number: 22,
@@ -135,22 +75,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Mudrid.png",
   },
   {
-    number: 23,
-    name: "Hidody",
-    types: ["Nature"],
-    icon: "/images/portraits/temtem/large/Hidody.png",
-  },
-  {
     number: 24,
     name: "Taifu",
     types: ["Nature"],
     icon: "/images/portraits/temtem/large/Taifu.png",
-  },
-  {
-    number: 25,
-    name: "Fomu",
-    types: ["Water"],
-    icon: "/images/portraits/temtem/large/Fomu.png",
   },
   {
     number: 26,
@@ -159,22 +87,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Wiplump.png",
   },
   {
-    number: 27,
-    name: "Skail",
-    types: ["Neutral"],
-    icon: "/images/portraits/temtem/large/Skail.png",
-  },
-  {
     number: 28,
     name: "Skunch",
     types: ["Neutral", "Melee"],
     icon: "/images/portraits/temtem/large/Skunch.png",
-  },
-  {
-    number: 29,
-    name: "Goty",
-    types: ["Neutral"],
-    icon: "/images/portraits/temtem/large/Goty.png",
   },
   {
     number: 30,
@@ -189,28 +105,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Rhoulder.png",
   },
   {
-    number: 32,
-    name: "Houchic",
-    types: ["Mental"],
-    icon: "/images/portraits/temtem/large/Houchic.png",
-  },
-  {
-    number: 33,
-    name: "Tental",
-    types: ["Mental"],
-    icon: "/images/portraits/temtem/large/Tental.png",
-  },
-  {
     number: 34,
     name: "Nagaise",
     types: ["Mental", "Water"],
     icon: "/images/portraits/temtem/large/Nagaise.png",
-  },
-  {
-    number: 35,
-    name: "Orphyll",
-    types: ["Nature", "Toxic"],
-    icon: "/images/portraits/temtem/large/Orphyll.png",
   },
   {
     number: 36,
@@ -219,28 +117,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Nidrasil.png",
   },
   {
-    number: 37,
-    name: "Banapi",
-    types: ["Fire"],
-    icon: "/images/portraits/temtem/large/Banapi.png",
-  },
-  {
     number: 38,
     name: "Capyre",
     types: ["Fire"],
     icon: "/images/portraits/temtem/large/Capyre.png",
-  },
-  {
-    number: 39,
-    name: "Lapinite",
-    types: ["Crystal"],
-    icon: "/images/portraits/temtem/large/Lapinite.png",
-  },
-  {
-    number: 40,
-    name: "Azuroc",
-    types: ["Crystal"],
-    icon: "/images/portraits/temtem/large/Azuroc.png",
   },
   {
     number: 41,
@@ -249,22 +129,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Zenoreth.png",
   },
   {
-    number: 42,
-    name: "Reval",
-    types: ["Mental"],
-    icon: "/images/portraits/temtem/large/Reval.png",
-  },
-  {
     number: 43,
     name: "Aohi",
     types: ["Mental", "Fire"],
     icon: "/images/portraits/temtem/large/Aohi.png",
-  },
-  {
-    number: 44,
-    name: "Bigu",
-    types: ["Nature"],
-    icon: "/images/portraits/temtem/large/Bigu.png",
   },
   {
     number: 45,
@@ -273,22 +141,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Babawa.png",
   },
   {
-    number: 46,
-    name: "0b1",
-    types: ["Digital", "Electric"],
-    icon: "/images/portraits/temtem/large/0b1.png",
-  },
-  {
     number: 47,
     name: "0b10",
     types: ["Digital", "Electric"],
     icon: "/images/portraits/temtem/large/0b10.png",
-  },
-  {
-    number: 48,
-    name: "Kaku",
-    types: ["Nature"],
-    icon: "/images/portraits/temtem/large/Kaku.png",
   },
   {
     number: 49,
@@ -301,12 +157,6 @@ export const species = [
     name: "Valash",
     types: ["Neutral", "Crystal"],
     icon: "/images/portraits/temtem/large/Valash.png",
-  },
-  {
-    number: 51,
-    name: "Towly",
-    types: ["Melee", "Mental"],
-    icon: "/images/portraits/temtem/large/Towly.png",
   },
   {
     number: 52,
@@ -327,28 +177,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Gyalis.png",
   },
   {
-    number: 55,
-    name: "Occlura",
-    types: ["Crystal"],
-    icon: "/images/portraits/temtem/large/Occlura.png",
-  },
-  {
     number: 56,
     name: "Myx",
     types: ["Crystal", "Mental"],
     icon: "/images/portraits/temtem/large/Myx.png",
-  },
-  {
-    number: 57,
-    name: "Raiber",
-    types: ["Fire"],
-    icon: "/images/portraits/temtem/large/Raiber.png",
-  },
-  {
-    number: 58,
-    name: "Raize",
-    types: ["Fire"],
-    icon: "/images/portraits/temtem/large/Raize.png",
   },
   {
     number: 59,
@@ -357,22 +189,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Raican.png",
   },
   {
-    number: 60,
-    name: "Pewki",
-    types: ["Water"],
-    icon: "/images/portraits/temtem/large/Pewki.png",
-  },
-  {
     number: 61,
     name: "Piraniant",
     types: ["Water"],
     icon: "/images/portraits/temtem/large/Piraniant.png",
-  },
-  {
-    number: 62,
-    name: "Scarawatt",
-    types: ["Electric"],
-    icon: "/images/portraits/temtem/large/Scarawatt.png",
   },
   {
     number: 63,
@@ -381,28 +201,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Scaravolt.png",
   },
   {
-    number: 64,
-    name: "Hoglip",
-    types: ["Digital", "Fire"],
-    icon: "/images/portraits/temtem/large/Hoglip.png",
-  },
-  {
     number: 65,
     name: "Hedgine",
     types: ["Digital", "Fire"],
     icon: "/images/portraits/temtem/large/Hedgine.png",
-  },
-  {
-    number: 66,
-    name: "Osuchi",
-    types: ["Earth"],
-    icon: "/images/portraits/temtem/large/Osuchi.png",
-  },
-  {
-    number: 67,
-    name: "Osukan",
-    types: ["Earth", "Melee"],
-    icon: "/images/portraits/temtem/large/Osukan.png",
   },
   {
     number: 68,
@@ -417,28 +219,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Saipat.png",
   },
   {
-    number: 70,
-    name: "Pycko",
-    types: ["Earth", "Fire"],
-    icon: "/images/portraits/temtem/large/Pycko.png",
-  },
-  {
     number: 71,
     name: "Drakash",
     types: ["Earth", "Fire"],
     icon: "/images/portraits/temtem/large/Drakash.png",
-  },
-  {
-    number: 72,
-    name: "Crystle",
-    types: ["Crystal"],
-    icon: "/images/portraits/temtem/large/Crystle.png",
-  },
-  {
-    number: 73,
-    name: "Sherald",
-    types: ["Crystal"],
-    icon: "/images/portraits/temtem/large/Sherald.png",
   },
   {
     number: 74,
@@ -453,12 +237,6 @@ export const species = [
     icon: "/images/portraits/temtem/large/Innki.png",
   },
   {
-    number: 76,
-    name: "Shaolite",
-    types: ["Melee"],
-    icon: "/images/portraits/temtem/large/Shaolite.png",
-  },
-  {
     number: 77,
     name: "Shaolant",
     types: ["Melee"],
@@ -471,28 +249,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Cycrox.png",
   },
   {
-    number: 79,
-    name: "Hocus",
-    types: ["Mental"],
-    icon: "/images/portraits/temtem/large/Hocus.png",
-  },
-  {
     number: 80,
     name: "Pocus",
     types: ["Mental"],
     icon: "/images/portraits/temtem/large/Pocus.png",
-  },
-  {
-    number: 81,
-    name: "Smolzy",
-    types: ["Electric"],
-    icon: "/images/portraits/temtem/large/Smolzy.png",
-  },
-  {
-    number: 82,
-    name: "Sparzy",
-    types: ["Electric"],
-    icon: "/images/portraits/temtem/large/Sparzy.png",
   },
   {
     number: 83,
@@ -501,22 +261,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Golzy.png",
   },
   {
-    number: 84,
-    name: "Mushi",
-    types: ["Toxic"],
-    icon: "/images/portraits/temtem/large/Mushi.png",
-  },
-  {
     number: 85,
     name: "Mushook",
     types: ["Toxic", "Melee"],
     icon: "/images/portraits/temtem/large/Mushook.png",
-  },
-  {
-    number: 86,
-    name: "Magmis",
-    types: ["Fire"],
-    icon: "/images/portraits/temtem/large/Magmis.png",
   },
   {
     number: 87,
@@ -525,40 +273,16 @@ export const species = [
     icon: "/images/portraits/temtem/large/Mastione.png",
   },
   {
-    number: 88,
-    name: "Umishi",
-    types: ["Water"],
-    icon: "/images/portraits/temtem/large/Umishi.png",
-  },
-  {
     number: 89,
     name: "Ukama",
     types: ["Water"],
     icon: "/images/portraits/temtem/large/Ukama.png",
   },
   {
-    number: 90,
-    name: "Galvanid",
-    types: ["Electric"],
-    icon: "/images/portraits/temtem/large/Galvanid.png",
-  },
-  {
     number: 91,
     name: "Raignet",
     types: ["Electric"],
     icon: "/images/portraits/temtem/large/Raignet.png",
-  },
-  {
-    number: 92,
-    name: "Smazee",
-    types: ["Melee"],
-    icon: "/images/portraits/temtem/large/Smazee.png",
-  },
-  {
-    number: 93,
-    name: "Baboong",
-    types: ["Melee"],
-    icon: "/images/portraits/temtem/large/Baboong.png",
   },
   {
     number: 94,
@@ -579,12 +303,6 @@ export const species = [
     icon: "/images/portraits/temtem/large/Gorong.png",
   },
   {
-    number: 97,
-    name: "Mitty",
-    types: ["Mental"],
-    icon: "/images/portraits/temtem/large/Mitty.png",
-  },
-  {
     number: 98,
     name: "Sanbi",
     types: ["Mental"],
@@ -597,28 +315,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Momo.png",
   },
   {
-    number: 100,
-    name: "Kuri",
-    types: ["Earth"],
-    icon: "/images/portraits/temtem/large/Kuri.png",
-  },
-  {
     number: 101,
     name: "Kauren",
     types: ["Earth"],
     icon: "/images/portraits/temtem/large/Kauren.png",
-  },
-  {
-    number: 102,
-    name: "Spriole",
-    types: ["Nature"],
-    icon: "/images/portraits/temtem/large/Spriole.png",
-  },
-  {
-    number: 103,
-    name: "Deendre",
-    types: ["Nature"],
-    icon: "/images/portraits/temtem/large/Deendre.png",
   },
   {
     number: 104,
@@ -627,22 +327,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Cerneaf.png",
   },
   {
-    number: 105,
-    name: "Toxolotl",
-    types: ["Toxic"],
-    icon: "/images/portraits/temtem/large/Toxolotl.png",
-  },
-  {
     number: 106,
     name: "Noxolotl",
     types: ["Toxic"],
     icon: "/images/portraits/temtem/large/Noxolotl.png",
-  },
-  {
-    number: 107,
-    name: "Blooze",
-    types: ["Toxic"],
-    icon: "/images/portraits/temtem/large/Blooze.png",
   },
   {
     number: 108,
@@ -651,34 +339,16 @@ export const species = [
     icon: "/images/portraits/temtem/large/Goolder.png",
   },
   {
-    number: 109,
-    name: "Zephyruff",
-    types: ["Toxic", "Wind"],
-    icon: "/images/portraits/temtem/large/Zephyruff.png",
-  },
-  {
     number: 110,
     name: "Volarend",
     types: ["Toxic", "Wind"],
     icon: "/images/portraits/temtem/large/Volarend.png",
   },
   {
-    number: 111,
-    name: "Grumvel",
-    types: ["Earth"],
-    icon: "/images/portraits/temtem/large/Grumvel.png",
-  },
-  {
     number: 112,
     name: "Grumper",
     types: ["Earth", "Electric"],
     icon: "/images/portraits/temtem/large/Grumper.png",
-  },
-  {
-    number: 113,
-    name: "Ganki",
-    types: ["Electric", "Wind"],
-    icon: "/images/portraits/temtem/large/Ganki.png",
   },
   {
     number: 114,
@@ -699,28 +369,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Yowlar.png",
   },
   {
-    number: 117,
-    name: "Droply",
-    types: ["Water", "Earth"],
-    icon: "/images/portraits/temtem/large/Droply.png",
-  },
-  {
     number: 118,
     name: "Garyo",
     types: ["Water", "Earth"],
     icon: "/images/portraits/temtem/large/Garyo.png",
-  },
-  {
-    number: 119,
-    name: "Broccoblin",
-    types: ["Nature"],
-    icon: "/images/portraits/temtem/large/Broccoblin.png",
-  },
-  {
-    number: 120,
-    name: "Broccorc",
-    types: ["Nature", "Melee"],
-    icon: "/images/portraits/temtem/large/Broccorc.png",
   },
   {
     number: 121,
@@ -747,22 +399,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Valiar.png",
   },
   {
-    number: 125,
-    name: "Pupoise",
-    types: ["Digital", "Nature"],
-    icon: "/images/portraits/temtem/large/Pupoise.png",
-  },
-  {
     number: 126,
     name: "Loatle",
     types: ["Digital", "Mental"],
     icon: "/images/portraits/temtem/large/Loatle.png",
-  },
-  {
-    number: 127,
-    name: "Kalazu",
-    types: ["Water"],
-    icon: "/images/portraits/temtem/large/Kalazu.png",
   },
   {
     number: 128,
@@ -775,12 +415,6 @@ export const species = [
     name: "Adoroboros",
     types: ["Toxic", "Mental"],
     icon: "/images/portraits/temtem/large/Adoroboros.png",
-  },
-  {
-    number: 130,
-    name: "Tuwai",
-    types: ["Wind"],
-    icon: "/images/portraits/temtem/large/Tuwai.png",
   },
   {
     number: 131,
@@ -825,18 +459,6 @@ export const species = [
     icon: "/images/portraits/temtem/large/Kinu.png",
   },
   {
-    number: 138,
-    name: "Vulvir",
-    types: ["Fire", "Earth"],
-    icon: "/images/portraits/temtem/large/Vulvir.png",
-  },
-  {
-    number: 139,
-    name: "Vulor",
-    types: ["Fire", "Earth"],
-    icon: "/images/portraits/temtem/large/Vulor.png",
-  },
-  {
     number: 140,
     name: "Vulcrane",
     types: ["Fire", "Earth"],
@@ -867,22 +489,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Vulffy.png",
   },
   {
-    number: 145,
-    name: "Chubee",
-    types: ["Digital", "Wind"],
-    icon: "/images/portraits/temtem/large/Chubee.png",
-  },
-  {
     number: 146,
     name: "Waspeen",
     types: ["Digital", "Crystal"],
     icon: "/images/portraits/temtem/large/Waspeen.png",
-  },
-  {
-    number: 147,
-    name: "Mawtle",
-    types: ["Digital", "Nature"],
-    icon: "/images/portraits/temtem/large/Mawtle.png",
   },
   {
     number: 148,
@@ -897,18 +507,6 @@ export const species = [
     icon: "/images/portraits/temtem/large/Hazrat.png",
   },
   {
-    number: 150,
-    name: "Minttle",
-    types: ["Mental"],
-    icon: "/images/portraits/temtem/large/Minttle.png",
-  },
-  {
-    number: 151,
-    name: "Minox",
-    types: ["Mental", "Electric"],
-    icon: "/images/portraits/temtem/large/Minox.png",
-  },
-  {
     number: 152,
     name: "Minothor",
     types: ["Mental", "Electric"],
@@ -919,12 +517,6 @@ export const species = [
     name: "Maoala",
     types: ["Melee", "Mental"],
     icon: "/images/portraits/temtem/large/Maoala.png",
-  },
-  {
-    number: 154,
-    name: "Venx",
-    types: ["Neutral"],
-    icon: "/images/portraits/temtem/large/Venx.png",
   },
   {
     number: 155,
@@ -951,22 +543,10 @@ export const species = [
     icon: "/images/portraits/temtem/large/Arachnyte.png",
   },
   {
-    number: 159,
-    name: "Thaiko",
-    types: ["Digital", "Melee"],
-    icon: "/images/portraits/temtem/large/Thaiko.png",
-  },
-  {
     number: 160,
     name: "Monkko",
     types: ["Digital", "Melee"],
     icon: "/images/portraits/temtem/large/Monkko.png",
-  },
-  {
-    number: 161,
-    name: "Anahir",
-    types: ["Crystal", "Fire"],
-    icon: "/images/portraits/temtem/large/Anahir.png",
   },
   {
     number: 162,
@@ -987,3 +567,9 @@ export const species = [
     icon: "/images/portraits/temtem/large/Volgon.png",
   },
 ] as const satisfies readonly Species[];
+
+export const speciesMap: Map<number, Species> = new Map(
+  speciesList.map((species) => [species.number, species])
+);
+
+export const speciesNumberList = Array.from(speciesMap.keys());

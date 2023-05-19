@@ -21,7 +21,7 @@ export type MultipleTypeQuiz = {
 const temTypeLength = TemTypes.length;
 
 const pickRandomType = () => {
-  const temTypeIndex = randomInt(0, temTypeLength);
+  const temTypeIndex = randomInt(0, temTypeLength - 1);
   return TemTypes[temTypeIndex];
 };
 
@@ -34,9 +34,9 @@ export const generateSingleTypeQuiz = (): SingleTypeQuiz => {
 export const generateMultipleTypeQuiz = (): MultipleTypeQuiz => {
   const attack = pickRandomType();
 
-  // 単タイプと複合タイプの出る確率をそれなりに同じくらいにするため
-  const defense1Index = randomInt(0, temTypeLength + 1);
+  // 単タイプと複合タイプの出る確率をそれなりに同じくらいにする
   const typesWithEmpty: (TemType | "Empty")[] = [...TemTypes, "Empty"];
+  const defense1Index = randomInt(0, typesWithEmpty.length - 1);
   const defense1 = typesWithEmpty[defense1Index];
 
   const defense2 = pickRandomType();
