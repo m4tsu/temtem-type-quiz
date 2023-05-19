@@ -22,6 +22,10 @@ const generateProblems = () => {
   return problems;
 };
 
+const resetProblems = (problems: Problem[]): Problem[] => {
+  return problems.map((p) => ({ ...p, status: "unanswered" }));
+};
+
 const MAX_ROUND = 10;
 
 export const useSingleTypeQuiz = () => {
@@ -51,6 +55,11 @@ export const useSingleTypeQuiz = () => {
 
   const reset = () => {
     setRound(1);
+    setProblems((prev) => resetProblems(prev));
+  };
+
+  const regenerateProblems = () => {
+    setRound(1);
     setProblems(generateProblems());
   };
 
@@ -62,5 +71,6 @@ export const useSingleTypeQuiz = () => {
     currentProblem,
     answerCurrentProblem,
     reset,
+    regenerateProblems,
   };
 };

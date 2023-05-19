@@ -18,6 +18,7 @@ export const SingleTypeQuiz = () => {
     currentProblem,
     answerCurrentProblem,
     reset,
+    regenerateProblems,
   } = useSingleTypeQuiz();
 
   return (
@@ -44,7 +45,18 @@ export const SingleTypeQuiz = () => {
         </Flex>
         {isEnded ? (
           <Flex direction="column" gap="md">
-            <Button onClick={reset}>リセット</Button>
+            <Grid grow>
+              <Grid.Col span={6}>
+                <Button onClick={reset} sx={{ width: "100%" }}>
+                  もう一度
+                </Button>
+              </Grid.Col>
+              <Grid.Col span={6}>
+                <Button onClick={regenerateProblems} sx={{ width: "100%" }}>
+                  別の問題
+                </Button>
+              </Grid.Col>
+            </Grid>
             <Grid gutter={4}>
               {problems.map((problem, i) => (
                 <Grid.Col
