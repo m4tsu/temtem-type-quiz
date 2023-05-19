@@ -36,6 +36,7 @@ export const TemTypeCompatibilitiesMap: {
     Water: 0.5,
     Fire: 2,
     Nature: 0.5,
+    Electric: 2,
     Crystal: 2,
   },
   Water: {
