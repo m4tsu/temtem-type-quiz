@@ -3,8 +3,8 @@ import {
   SingleTypeQuiz,
   answerToSingleTypeQuiz,
   generateSingleTypeQuiz,
-} from "../../models/tem-type-quiz";
-import { TemTypeEffectiveNess } from "../../models/tem-type";
+} from "../../../models/tem-type-quiz";
+import { TemTypeEffectiveNess } from "../../../models/tem-type";
 
 type Problem = {
   quiz: SingleTypeQuiz;

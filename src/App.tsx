@@ -1,6 +1,6 @@
 import { Container, Flex, Header, Tabs, Text, Title } from "@mantine/core";
 import { SingleTypeQuiz } from "./feature/tem-type-quiz/SingleTypeQuiz";
-import { MultipleTypeQuiz } from "./feature/tem-type-quiz/MutipleTypeQuiz/MultipleTypeQuiz";
+import { MultipleTypeQuiz } from "./feature/tem-type-quiz/MutipleTypeQuiz";
 
 function App() {
   return (

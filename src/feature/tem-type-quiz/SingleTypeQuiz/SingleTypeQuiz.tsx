@@ -4,7 +4,7 @@ import {
   TemType,
   TemTypeEffectiveNess,
   calculateEffectiveness,
-} from "../../models/tem-type";
+} from "../../../models/tem-type";
 
 const typeImage = (type: TemType) => `/images/types/${type}.png`;
 const EffectivenessList = [0.5, 1, 2] satisfies TemTypeEffectiveNess[];
