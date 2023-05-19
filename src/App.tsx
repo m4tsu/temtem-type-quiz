@@ -10,8 +10,8 @@ function App() {
           size="xs"
           sx={{ display: "flex", alignItems: "center", height: "100%" }}
         >
-          <Title order={1} size="h2">
-            TemTemのタイプ覚えたい
+          <Title order={1} size="h2" align="center" sx={{ width: "100%" }}>
+            TemTem タイプ相性クイズ
           </Title>
         </Container>
       </Header>
