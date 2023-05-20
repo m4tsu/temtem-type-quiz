@@ -1,4 +1,13 @@
-import { Button, Card, Divider, Flex, Grid, Image, Text } from "@mantine/core";
+import {
+  Button,
+  Card,
+  Divider,
+  Flex,
+  Grid,
+  Image,
+  SimpleGrid,
+  Text,
+} from "@mantine/core";
 import {
   TemType,
   TemTypeEffectivenessAgainstMultiple,
@@ -25,40 +34,51 @@ export const MultipleTypeQuiz = () => {
 
   return (
     <Flex direction="column" gap="lg" justify="center">
-      <Text align="center" size="lg" fw="bold">
+      <Flex
+        sx={{ width: "100%" }}
+        direction="column"
+        gap="md"
+        align="center"
+        justify="center"
+      >
         {isEnded ? (
-          <>
+          <Text size="lg" fw="bold">
             正解: {correctCount}/{problems.length}
-          </>
+          </Text>
         ) : (
           <>
-            {round}問目 ({`${problems.length}問中`})
+            <Text size="lg" fw="bold">
+              {round}問目 ({`${problems.length}問中`})
+            </Text>
+            <Flex sx={{ width: "100%" }} align="center" justify="center">
+              <Image src={typeImage(currentProblem.quiz.attack)} width={60} />
+              <Image src="/arrow-right-solid.svg" width={40} />
+              {currentProblem.quiz.defense.length === 1 ? (
+                <Image
+                  src={typeImage(currentProblem.quiz.defense[0])}
+                  width={60}
+                />
+              ) : (
+                <Flex align="center">
+                  <Image
+                    src={typeImage(currentProblem.quiz.defense[0])}
+                    width={60}
+                  />
+                  <Text size="xl" fw="bold">
+                    +
+                  </Text>
+                  <Image
+                    src={typeImage(currentProblem.quiz.defense[1])}
+                    width={60}
+                  />
+                </Flex>
+              )}
+            </Flex>
           </>
         )}
-      </Text>
+      </Flex>
+      <Divider />
       <Flex direction="column" gap="lg">
-        <Flex sx={{ width: "100%" }} align="center" justify="center">
-          <Image src={typeImage(currentProblem.quiz.attack)} width={60} />
-          <Image src="/arrow-right-solid.svg" width={40} />
-          {currentProblem.quiz.defense.length === 1 ? (
-            <Image src={typeImage(currentProblem.quiz.defense[0])} width={60} />
-          ) : (
-            <Flex align="center">
-              <Image
-                src={typeImage(currentProblem.quiz.defense[0])}
-                width={60}
-              />
-              <Text size="xl" fw="bold">
-                +
-              </Text>
-              <Image
-                src={typeImage(currentProblem.quiz.defense[1])}
-                width={60}
-              />
-            </Flex>
-          )}
-        </Flex>
-        <Divider />
         {isEnded ? (
           <Flex direction="column" gap="md">
             <Grid grow>
@@ -73,11 +93,16 @@ export const MultipleTypeQuiz = () => {
                 </Button>
               </Grid.Col>
             </Grid>
-            <Grid gutter={4}>
+            <SimpleGrid
+              sx={{
+                display: "grid",
+                gap: "8px",
+                gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
+              }}
+            >
               {problems.map((problem, i) => (
-                <Grid.Col
+                <Flex
                   key={i}
-                  span={4}
                   sx={{
                     display: "flex",
                     flexDirection: "column",
@@ -103,7 +128,7 @@ export const MultipleTypeQuiz = () => {
                             src={typeImage(problem.quiz.defense[0])}
                             width={40}
                           />
-                          <Text size="xl" fw="bold">
+                          <Text size="xl" fw="bold" color="dark">
                             +
                           </Text>
                           <Image
@@ -121,9 +146,9 @@ export const MultipleTypeQuiz = () => {
                       x
                     </Text>
                   </Card>
-                </Grid.Col>
+                </Flex>
               ))}
-            </Grid>
+            </SimpleGrid>
           </Flex>
         ) : (
           <Card sx={{ display: "flex", flexDirection: "column", gap: 8 }}>

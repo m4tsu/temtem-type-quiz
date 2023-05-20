@@ -11,7 +11,7 @@ type Problem = {
   status: "correct" | "incorrect" | "unanswered";
 };
 
-const MAX_ROUND = 10;
+const MAX_ROUND = 12;
 
 const generateProblems = () => {
   const problems: Problem[] = [];

@@ -8,6 +8,7 @@ import {
   Flex,
   Grid,
   Image,
+  SimpleGrid,
   Text,
 } from "@mantine/core";
 import { Species } from "../../models/species";
@@ -35,21 +36,27 @@ export const TemSpeciesQuiz: FC = () => {
 
   return (
     <Flex direction="column" gap="lg" justify="center">
-      <Text align="center" size="lg" fw="bold">
+      <Flex
+        sx={{ width: "100%" }}
+        direction="column"
+        gap="md"
+        align="center"
+        justify="center"
+      >
         {isEnded ? (
-          <>
+          <Text align="center" size="lg" fw="bold">
             正解: {correctCount}/{problems.length}
-          </>
+          </Text>
         ) : (
           <>
-            {round}問目 ({`${problems.length}問中`})
+            <Text align="center" size="lg" fw="bold">
+              {round}問目 ({`${problems.length}問中`})
+            </Text>
+            <Card p="0" withBorder>
+              <Image src={iconImage(currentProblem.species)} width={80} />
+            </Card>
           </>
         )}
-      </Text>
-      <Flex justify="center">
-        <Card p="0" withBorder>
-          <Image src={iconImage(currentProblem.species)} width={80} />
-        </Card>
       </Flex>
       <Divider />
       {isEnded ? (
@@ -66,11 +73,16 @@ export const TemSpeciesQuiz: FC = () => {
               </Button>
             </Grid.Col>
           </Grid>
-          <Grid gutter={4}>
+          <SimpleGrid
+            sx={{
+              display: "grid",
+              gap: "8px",
+              gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
+            }}
+          >
             {problems.map((problem, i) => (
-              <Grid.Col
+              <Flex
                 key={i}
-                span={4}
                 sx={{
                   display: "flex",
                   flexDirection: "column",
@@ -102,9 +114,9 @@ export const TemSpeciesQuiz: FC = () => {
                     ))}
                   </Flex>
                 </Card>
-              </Grid.Col>
+              </Flex>
             ))}
-          </Grid>
+          </SimpleGrid>
         </Flex>
       ) : (
         <Flex direction="column" gap="md">
@@ -137,15 +149,18 @@ export const TemSpeciesQuiz: FC = () => {
               ))}
             </Flex>
           </Flex>
-          <Grid
-            sx={{ width: "75%", justifyContent: "center", margin: "0 auto" }}
+          <SimpleGrid
+            sx={{
+              width: "80%",
+              margin: "0 auto",
+              display: "grid",
+              gap: "8px",
+              gridTemplateColumns: "repeat(auto-fill, minmax(60px, 20%))",
+              justifyContent: "center",
+            }}
           >
             {TemTypes.map((type) => (
-              <Grid.Col
-                key={type}
-                span={3}
-                sx={{ justifyContent: "center", display: "flex" }}
-              >
+              <Flex key={type} justify="center">
                 <Button
                   variant="outline"
                   color="gray"
@@ -156,9 +171,9 @@ export const TemSpeciesQuiz: FC = () => {
                 >
                   <Image src={typeImage(type)} width={50} />
                 </Button>
-              </Grid.Col>
+              </Flex>
             ))}
-          </Grid>
+          </SimpleGrid>
           <Center
             sx={{ width: "70%", justifyContent: "center", margin: "0 auto" }}
           >
