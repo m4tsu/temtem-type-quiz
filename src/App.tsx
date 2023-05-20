@@ -19,7 +19,7 @@ function App() {
           </Title>
         </Container>
       </Header>
-      <Box>
+      <Box pb="xl">
         <Container size="xs">
           <Tabs defaultValue="single">
             <Tabs.List grow>
