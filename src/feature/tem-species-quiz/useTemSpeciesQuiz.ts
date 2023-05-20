@@ -6,6 +6,7 @@ import {
 } from "../../models/species";
 import { TemType } from "../../models/tem-type";
 import { answerToSpeciesQuiz } from "../../models/species-quiz";
+import { shuffleArray } from "../../utils/shuffleArray";
 
 type Problem = {
   species: Species;
@@ -63,7 +64,7 @@ export const useTemSpeciesQuiz = () => {
 
   const reset = () => {
     setRound(1);
-    setProblems((prev) => resetProblems(prev));
+    setProblems((prev) => shuffleArray(resetProblems(prev)));
   };
 
   const regenerateProblems = () => {

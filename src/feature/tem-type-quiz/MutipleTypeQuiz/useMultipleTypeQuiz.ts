@@ -5,6 +5,7 @@ import {
   generateMultipleTypeQuiz,
 } from "../../../models/tem-type-quiz";
 import { TemTypeEffectivenessAgainstMultiple } from "../../../models/tem-type";
+import { shuffleArray } from "../../../utils/shuffleArray";
 
 type Problem = {
   quiz: MultipleTypeQuiz;
@@ -57,7 +58,7 @@ export const useMultipleTypeQuiz = () => {
 
   const reset = () => {
     setRound(1);
-    setProblems((prev) => resetProblems(prev));
+    setProblems((prev) => shuffleArray(resetProblems(prev)));
   };
 
   const regenerateProblems = () => {

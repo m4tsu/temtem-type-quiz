@@ -5,6 +5,7 @@ import {
   generateSingleTypeQuiz,
 } from "../../../models/tem-type-quiz";
 import { TemTypeEffectiveNess } from "../../../models/tem-type";
+import { shuffleArray } from "../../../utils/shuffleArray";
 
 type Problem = {
   quiz: SingleTypeQuiz;
@@ -55,7 +56,7 @@ export const useSingleTypeQuiz = () => {
 
   const reset = () => {
     setRound(1);
-    setProblems((prev) => resetProblems(prev));
+    setProblems((prev) => shuffleArray(resetProblems(prev)));
   };
 
   const regenerateProblems = () => {
