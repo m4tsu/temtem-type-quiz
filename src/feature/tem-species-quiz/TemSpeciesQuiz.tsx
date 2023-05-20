@@ -17,7 +17,7 @@ import { isValidGuess, useSpeciesTypesGuess } from "./useSpeciesTypesGuess";
 
 const typeImage = (type: TemType) => `/images/types/${type}.png`;
 const iconImage = (species: Species) =>
-  `https://temtem-api.mael.tech.${species.icon}`;
+  `https://temtem-api.mael.tech${species.icon}`;
 
 export const TemSpeciesQuiz: FC = () => {
   const {
