@@ -1,4 +1,5 @@
 import { Species } from "../models/species";
+import JaNameJson from "./species-ja.json";
 
 // ./species.json からコピペして型付ける
 export const speciesList = [
@@ -573,3 +574,10 @@ export const speciesMap: Map<number, Species> = new Map(
 );
 
 export const speciesNumberList = Array.from(speciesMap.keys());
+
+export const speciesJaNameMap: {
+  [number: number]: {
+    number: number;
+    name: string;
+  };
+} = JaNameJson;

@@ -8,14 +8,16 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "write:species": "ts-node --esm scripts/write-species"
+    "write:species": "ts-node --esm scripts/write-ja-name"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@mantine/core": "^6.0.11",
     "@mantine/hooks": "^6.0.11",
+    "i18next": "^22.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^12.3.1",
     "ts-node": "^10.9.1"
   },
   "devDependencies": {

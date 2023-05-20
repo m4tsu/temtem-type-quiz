@@ -11,14 +11,16 @@ import {
   SimpleGrid,
   Text,
 } from "@mantine/core";
-import { Species } from "../../models/species";
+import { Species, getName } from "../../models/species";
 import { TemTypes, temTypeImage } from "../../models/tem-type";
 import { isValidGuess, useSpeciesTypesGuess } from "./useSpeciesTypesGuess";
+import { useLanguage } from "@/libs/i18next/i18n";
 
 const iconImage = (species: Species) =>
   `https://temtem-api.mael.tech${species.icon}`;
 
 export const TemSpeciesQuiz: FC = () => {
+  const { language } = useLanguage();
   const {
     round,
     problems,
@@ -51,6 +53,8 @@ export const TemSpeciesQuiz: FC = () => {
             <Text align="center" size="lg" fw="bold">
               {round}問目 ({`${problems.length}問中`})
             </Text>
+            {/* 種族名表示するか選べるようにする？ */}
+            {/* <Flex direction="column" gap="4px" justify="center"> */}
             <Card p="0" withBorder>
               <Image
                 src={iconImage(currentProblem.species)}
@@ -58,6 +62,10 @@ export const TemSpeciesQuiz: FC = () => {
                 width={80}
               />
             </Card>
+            {/* <Text align="center" size="md" fw="bold">
+                {getName(currentProblem.species, language)}
+              </Text> */}
+            {/* </Flex> */}
           </>
         )}
       </Flex>
@@ -105,12 +113,12 @@ export const TemSpeciesQuiz: FC = () => {
                 >
                   <Image
                     src={iconImage(problem.species)}
-                    alt={problem.species.name}
+                    alt={getName(problem.species, language)}
                     width={50}
                     bg="dark.6"
                   />
                   <Text align="center" fw="bold" color="gray.1">
-                    {problem.species.name}
+                    {getName(problem.species, language)}
                   </Text>
                   <Flex justify="center" gap="xs">
                     {problem.species.types.map((type) => (

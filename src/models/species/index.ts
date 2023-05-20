@@ -1,4 +1,9 @@
-import { speciesMap, speciesNumberList } from "../../data/species";
+import {
+  speciesJaNameMap,
+  speciesMap,
+  speciesNumberList,
+} from "../../data/species";
+import { Language } from "../../libs/i18next/types";
 import { randomInt } from "../../utils/randomInt";
 import { TemType } from "../tem-type";
 
@@ -21,4 +26,11 @@ export const findSpecies = (speciesNumber: number): Species => {
     throw new Error(`species(number: ${speciesNumber})not found`);
   }
   return s;
+};
+
+export const getName = (species: Species, language: Language) => {
+  if (language === "ja") {
+    return speciesJaNameMap[species.number].name;
+  }
+  return species.name;
 };
