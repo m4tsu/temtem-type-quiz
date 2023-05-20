@@ -12,10 +12,9 @@ import {
   Text,
 } from "@mantine/core";
 import { Species } from "../../models/species";
-import { TemType, TemTypes } from "../../models/tem-type";
+import { TemTypes, temTypeImage } from "../../models/tem-type";
 import { isValidGuess, useSpeciesTypesGuess } from "./useSpeciesTypesGuess";
 
-const typeImage = (type: TemType) => `/images/types/${type}.png`;
 const iconImage = (species: Species) =>
   `https://temtem-api.mael.tech${species.icon}`;
 
@@ -117,7 +116,7 @@ export const TemSpeciesQuiz: FC = () => {
                     {problem.species.types.map((type) => (
                       <Image
                         key={type}
-                        src={typeImage(type)}
+                        src={temTypeImage(type)}
                         alt={type}
                         width={30}
                       />
@@ -149,7 +148,7 @@ export const TemSpeciesQuiz: FC = () => {
                   }}
                 >
                   {selectedTypes[i] ? (
-                    <Image src={typeImage(selectedTypes[i])} width={40} />
+                    <Image src={temTypeImage(selectedTypes[i])} width={40} />
                   ) : (
                     <Text size="xl" fw="bold" w="40px" h="40px" align="center">
                       *
@@ -180,7 +179,7 @@ export const TemSpeciesQuiz: FC = () => {
                   onClick={() => toggleType(type)}
                   aria-label={type}
                 >
-                  <Image src={typeImage(type)} alt={type} width={50} />
+                  <Image src={temTypeImage(type)} alt={type} width={50} />
                 </Button>
               </Flex>
             ))}

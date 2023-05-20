@@ -10,12 +10,11 @@ import {
 } from "@mantine/core";
 import { useSingleTypeQuiz } from "./useSingleQuiz";
 import {
-  TemType,
   TemTypeEffectiveNess,
   calculateEffectiveness,
+  temTypeImage,
 } from "../../../models/tem-type";
 
-const typeImage = (type: TemType) => `/images/types/${type}.png`;
 const EffectivenessList = [0.5, 1, 2] satisfies TemTypeEffectiveNess[];
 
 export const SingleTypeQuiz = () => {
@@ -50,13 +49,13 @@ export const SingleTypeQuiz = () => {
             </Text>
             <Flex sx={{ width: "100%" }} align="center" justify="center">
               <Image
-                src={typeImage(currentProblem.quiz.attack)}
+                src={temTypeImage(currentProblem.quiz.attack)}
                 alt={currentProblem.quiz.attack}
                 width={60}
               />
               <Image src="/arrow-right-solid.svg" width={40} />
               <Image
-                src={typeImage(currentProblem.quiz.defense)}
+                src={temTypeImage(currentProblem.quiz.defense)}
                 alt={currentProblem.quiz.defense}
                 width={60}
               />
@@ -103,13 +102,13 @@ export const SingleTypeQuiz = () => {
                       justify="center"
                     >
                       <Image
-                        src={typeImage(problem.quiz.attack)}
+                        src={temTypeImage(problem.quiz.attack)}
                         alt={problem.quiz.attack}
                         width={40}
                       />
                       <Image src="/arrow-right-solid.svg" width={25} />
                       <Image
-                        src={typeImage(problem.quiz.defense)}
+                        src={temTypeImage(problem.quiz.defense)}
                         alt={problem.quiz.defense}
                         width={40}
                       />

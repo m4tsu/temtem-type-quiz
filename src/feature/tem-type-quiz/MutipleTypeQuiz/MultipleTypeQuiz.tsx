@@ -9,13 +9,12 @@ import {
   Text,
 } from "@mantine/core";
 import {
-  TemType,
   TemTypeEffectivenessAgainstMultiple,
   calculateEffectivenessAgainstMultiple,
+  temTypeImage,
 } from "../../../models/tem-type";
 import { useMultipleTypeQuiz } from "./useMultipleTypeQuiz";
 
-const typeImage = (type: TemType) => `/images/types/${type}.png`;
 const EffectivenessList = [
   0.25, 0.5, 1, 2, 4,
 ] satisfies TemTypeEffectivenessAgainstMultiple[];
@@ -52,21 +51,21 @@ export const MultipleTypeQuiz = () => {
             </Text>
             <Flex sx={{ width: "100%" }} align="center" justify="center">
               <Image
-                src={typeImage(currentProblem.quiz.attack)}
+                src={temTypeImage(currentProblem.quiz.attack)}
                 width={60}
                 alt={currentProblem.quiz.attack}
               />
               <Image src="/arrow-right-solid.svg" width={40} />
               {currentProblem.quiz.defense.length === 1 ? (
                 <Image
-                  src={typeImage(currentProblem.quiz.defense[0])}
+                  src={temTypeImage(currentProblem.quiz.defense[0])}
                   alt={currentProblem.quiz.defense[0]}
                   width={60}
                 />
               ) : (
                 <Flex align="center">
                   <Image
-                    src={typeImage(currentProblem.quiz.defense[0])}
+                    src={temTypeImage(currentProblem.quiz.defense[0])}
                     alt={currentProblem.quiz.defense[0]}
                     width={60}
                   />
@@ -74,7 +73,7 @@ export const MultipleTypeQuiz = () => {
                     +
                   </Text>
                   <Image
-                    src={typeImage(currentProblem.quiz.defense[1])}
+                    src={temTypeImage(currentProblem.quiz.defense[1])}
                     alt={currentProblem.quiz.defense[1]}
                     width={60}
                   />
@@ -123,21 +122,21 @@ export const MultipleTypeQuiz = () => {
                       justify="center"
                     >
                       <Image
-                        src={typeImage(problem.quiz.attack)}
+                        src={temTypeImage(problem.quiz.attack)}
                         alt={problem.quiz.attack}
                         width={40}
                       />
                       <Image src="/arrow-right-solid.svg" width={25} />
                       {problem.quiz.defense.length === 1 ? (
                         <Image
-                          src={typeImage(problem.quiz.defense[0])}
+                          src={temTypeImage(problem.quiz.defense[0])}
                           alt={problem.quiz.defense[0]}
                           width={40}
                         />
                       ) : (
                         <Flex align="center">
                           <Image
-                            src={typeImage(problem.quiz.defense[0])}
+                            src={temTypeImage(problem.quiz.defense[0])}
                             alt={problem.quiz.defense[0]}
                             width={40}
                           />
@@ -145,7 +144,7 @@ export const MultipleTypeQuiz = () => {
                             +
                           </Text>
                           <Image
-                            src={typeImage(problem.quiz.defense[1])}
+                            src={temTypeImage(problem.quiz.defense[1])}
                             alt={problem.quiz.defense[1]}
                             width={40}
                           />

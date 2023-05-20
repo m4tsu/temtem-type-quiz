@@ -125,3 +125,5 @@ export const calculateEffectivenessAgainstMultiple = (
   const ef2 = calculateEffectiveness(attack, defense[1]);
   return (ef1 * ef2) as TemTypeEffectivenessAgainstMultiple;
 };
+
+export const temTypeImage = (type: TemType) => `/images/types/${type}.png`;
