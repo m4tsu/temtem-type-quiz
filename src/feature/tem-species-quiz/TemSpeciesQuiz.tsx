@@ -53,7 +53,11 @@ export const TemSpeciesQuiz: FC = () => {
               {round}問目 ({`${problems.length}問中`})
             </Text>
             <Card p="0" withBorder>
-              <Image src={iconImage(currentProblem.species)} width={80} />
+              <Image
+                src={iconImage(currentProblem.species)}
+                alt={currentProblem.species.name}
+                width={80}
+              />
             </Card>
           </>
         )}
@@ -102,6 +106,7 @@ export const TemSpeciesQuiz: FC = () => {
                 >
                   <Image
                     src={iconImage(problem.species)}
+                    alt={problem.species.name}
                     width={50}
                     bg="dark.6"
                   />
@@ -110,7 +115,12 @@ export const TemSpeciesQuiz: FC = () => {
                   </Text>
                   <Flex justify="center" gap="xs">
                     {problem.species.types.map((type) => (
-                      <Image key={type} src={typeImage(type)} width={30} />
+                      <Image
+                        key={type}
+                        src={typeImage(type)}
+                        alt={type}
+                        width={30}
+                      />
                     ))}
                   </Flex>
                 </Card>
@@ -168,8 +178,9 @@ export const TemSpeciesQuiz: FC = () => {
                   p="4px"
                   radius="xl"
                   onClick={() => toggleType(type)}
+                  aria-label={type}
                 >
-                  <Image src={typeImage(type)} width={50} />
+                  <Image src={typeImage(type)} alt={type} width={50} />
                 </Button>
               </Flex>
             ))}

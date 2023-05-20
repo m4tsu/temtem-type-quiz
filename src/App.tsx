@@ -15,7 +15,7 @@ function App() {
           sx={{ display: "flex", alignItems: "center", height: "100%" }}
         >
           <Title order={1} size="h2" align="center" sx={{ width: "100%" }}>
-            TemTem タイプ相性クイズ
+            TemTem タイプクイズ
           </Title>
         </Container>
       </Header>
@@ -25,12 +25,12 @@ function App() {
             <Tabs.List grow>
               <Tabs.Tab value="single">
                 <Text size="lg" fw="bold">
-                  単タイプのみ
+                  タイプ相性(単)
                 </Text>
               </Tabs.Tab>
               <Tabs.Tab value="multiple">
                 <Text size="lg" fw="bold">
-                  複合タイプ有り
+                  タイプ相性(複)
                 </Text>
               </Tabs.Tab>
               <Tabs.Tab value="species">

@@ -51,17 +51,23 @@ export const MultipleTypeQuiz = () => {
               {round}問目 ({`${problems.length}問中`})
             </Text>
             <Flex sx={{ width: "100%" }} align="center" justify="center">
-              <Image src={typeImage(currentProblem.quiz.attack)} width={60} />
+              <Image
+                src={typeImage(currentProblem.quiz.attack)}
+                width={60}
+                alt={currentProblem.quiz.attack}
+              />
               <Image src="/arrow-right-solid.svg" width={40} />
               {currentProblem.quiz.defense.length === 1 ? (
                 <Image
                   src={typeImage(currentProblem.quiz.defense[0])}
+                  alt={currentProblem.quiz.defense[0]}
                   width={60}
                 />
               ) : (
                 <Flex align="center">
                   <Image
                     src={typeImage(currentProblem.quiz.defense[0])}
+                    alt={currentProblem.quiz.defense[0]}
                     width={60}
                   />
                   <Text size="xl" fw="bold">
@@ -69,6 +75,7 @@ export const MultipleTypeQuiz = () => {
                   </Text>
                   <Image
                     src={typeImage(currentProblem.quiz.defense[1])}
+                    alt={currentProblem.quiz.defense[1]}
                     width={60}
                   />
                 </Flex>
@@ -115,17 +122,23 @@ export const MultipleTypeQuiz = () => {
                       align="center"
                       justify="center"
                     >
-                      <Image src={typeImage(problem.quiz.attack)} width={40} />
+                      <Image
+                        src={typeImage(problem.quiz.attack)}
+                        alt={problem.quiz.attack}
+                        width={40}
+                      />
                       <Image src="/arrow-right-solid.svg" width={25} />
                       {problem.quiz.defense.length === 1 ? (
                         <Image
                           src={typeImage(problem.quiz.defense[0])}
+                          alt={problem.quiz.defense[0]}
                           width={40}
                         />
                       ) : (
                         <Flex align="center">
                           <Image
                             src={typeImage(problem.quiz.defense[0])}
+                            alt={problem.quiz.defense[0]}
                             width={40}
                           />
                           <Text size="xl" fw="bold" color="dark">
@@ -133,6 +146,7 @@ export const MultipleTypeQuiz = () => {
                           </Text>
                           <Image
                             src={typeImage(problem.quiz.defense[1])}
+                            alt={problem.quiz.defense[1]}
                             width={40}
                           />
                         </Flex>
