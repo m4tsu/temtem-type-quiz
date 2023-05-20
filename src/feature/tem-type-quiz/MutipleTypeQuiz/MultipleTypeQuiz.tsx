@@ -1,13 +1,15 @@
 import { Button, Card, Divider, Flex, Grid, Image, Text } from "@mantine/core";
 import {
   TemType,
-  TemTypeEffectiveNess,
+  TemTypeEffectivenessAgainstMultiple,
   calculateEffectivenessAgainstMultiple,
 } from "../../../models/tem-type";
 import { useMultipleTypeQuiz } from "./useMultipleTypeQuiz";
 
 const typeImage = (type: TemType) => `/images/types/${type}.png`;
-const EffectivenessList = [0.5, 1, 2] satisfies TemTypeEffectiveNess[];
+const EffectivenessList = [
+  0.25, 0.5, 1, 2, 4,
+] satisfies TemTypeEffectivenessAgainstMultiple[];
 
 export const MultipleTypeQuiz = () => {
   const {
