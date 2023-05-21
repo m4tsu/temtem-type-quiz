@@ -3,9 +3,9 @@ import {
   MultipleTypeQuiz,
   answerToMultipleTypeQuiz,
   generateMultipleTypeQuiz,
-} from "../../../models/tem-type-quiz";
-import { TemTypeEffectivenessAgainstMultiple } from "../../../models/tem-type";
-import { shuffleArray } from "../../../utils/shuffleArray";
+} from "@/models/tem-type-quiz";
+import { TemTypeEffectivenessAgainstMultiple } from "@/models/tem-type";
+import { shuffleArray } from "@/utils/shuffleArray";
 
 type Problem = {
   quiz: MultipleTypeQuiz;

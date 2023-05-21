@@ -13,7 +13,7 @@ import {
   TemTypeEffectiveNess,
   calculateEffectiveness,
   temTypeImage,
-} from "../../../models/tem-type";
+} from "@/models/tem-type";
 
 const EffectivenessList = [0.5, 1, 2] satisfies TemTypeEffectiveNess[];
 

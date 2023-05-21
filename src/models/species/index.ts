@@ -2,9 +2,9 @@ import {
   speciesJaNameMap,
   speciesMap,
   speciesNumberList,
-} from "../../data/species";
-import { Language } from "../../libs/i18next/types";
-import { randomInt } from "../../utils/randomInt";
+} from "@/data/species";
+import { Language } from "@/libs/i18next/types";
+import { randomInt } from "@/utils/randomInt";
 import { TemType } from "../tem-type";
 
 export type Species = {

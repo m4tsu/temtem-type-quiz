@@ -12,7 +12,7 @@ import {
   TemTypeEffectivenessAgainstMultiple,
   calculateEffectiveness,
   temTypeImage,
-} from "../../../models/tem-type";
+} from "@/models/tem-type";
 import { useMultipleTypeQuiz } from "./useMultipleTypeQuiz";
 
 const EffectivenessList = [

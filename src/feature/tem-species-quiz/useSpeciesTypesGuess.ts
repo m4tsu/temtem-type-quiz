@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TemType } from "../../models/tem-type";
+import { TemType } from "@/models/tem-type";
 
 type Guess = [TemType] | [TemType, TemType];
 

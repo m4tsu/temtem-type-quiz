@@ -1,4 +1,4 @@
-import { Species } from "../models/species";
+import { Species } from "@/models/species";
 import JaNameJson from "./species-ja.json";
 
 // ./species.json からコピペして型付ける

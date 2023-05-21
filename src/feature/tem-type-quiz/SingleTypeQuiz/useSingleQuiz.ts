@@ -3,9 +3,9 @@ import {
   SingleTypeQuiz,
   answerToSingleTypeQuiz,
   generateSingleTypeQuiz,
-} from "../../../models/tem-type-quiz";
-import { TemTypeEffectiveNess } from "../../../models/tem-type";
-import { shuffleArray } from "../../../utils/shuffleArray";
+} from "@/models/tem-type-quiz";
+import { TemTypeEffectiveNess } from "@/models/tem-type";
+import { shuffleArray } from "@/utils/shuffleArray";
 
 type Problem = {
   quiz: SingleTypeQuiz;

@@ -3,10 +3,10 @@ import {
   Species,
   findSpecies,
   pickRandomSpeciesNumber,
-} from "../../models/species";
-import { TemType } from "../../models/tem-type";
-import { answerToSpeciesQuiz } from "../../models/species-quiz";
-import { shuffleArray } from "../../utils/shuffleArray";
+} from "@/models/species";
+import { TemType } from "@/models/tem-type";
+import { answerToSpeciesQuiz } from "@/models/species-quiz";
+import { shuffleArray } from "@/utils/shuffleArray";
 
 type Problem = {
   species: Species;

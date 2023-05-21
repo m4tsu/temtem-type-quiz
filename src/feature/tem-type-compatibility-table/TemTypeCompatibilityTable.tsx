@@ -5,7 +5,7 @@ import {
   TemTypes,
   calculateEffectiveness,
   temTypeImage,
-} from "../../models/tem-type";
+} from "@/models/tem-type";
 
 type TdProps = {
   attack: TemType;

@@ -12,8 +12,8 @@ import {
   SimpleGrid,
   Text,
 } from "@mantine/core";
-import { Species, getName } from "../../models/species";
-import { TemTypes, temTypeImage } from "../../models/tem-type";
+import { Species, getName } from "@/models/species";
+import { TemTypes, temTypeImage } from "@/models/tem-type";
 import { isValidGuess, useSpeciesTypesGuess } from "./useSpeciesTypesGuess";
 import { useLanguage } from "@/libs/i18next/i18n";
 
