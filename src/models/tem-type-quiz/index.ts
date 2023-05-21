@@ -44,6 +44,9 @@ export const generateMultipleTypeQuiz = (): MultipleTypeQuiz => {
   if (defense1 === "Empty") {
     return { attack, defense: [defense2] };
   }
+  if (defense1 === defense2) {
+    return { attack, defense: [defense1] };
+  }
   return { attack, defense: [defense1, defense2] };
 };
 
