@@ -1,5 +1,11 @@
-import { speciesList } from "@/data/species";
-import { Species, findSpecies, getIconImageUrl } from "@/models/species";
+import { speciesJaNameMap, speciesList } from "@/data/species";
+import { useLanguage } from "@/libs/i18next/i18n";
+import {
+  Species,
+  findSpecies,
+  getIconImageUrl,
+  getName,
+} from "@/models/species";
 import {
   TemType,
   TemTypes,
@@ -22,6 +28,8 @@ type TemTemCellProps = {
   species: Species;
 };
 const TemTemCell: FC<TemTemCellProps> = ({ species }) => {
+  const { language } = useLanguage();
+
   return (
     <Box component="td" p="4px!important">
       <Flex align="center" gap="xs">
@@ -32,8 +40,13 @@ const TemTemCell: FC<TemTemCellProps> = ({ species }) => {
               <Image key={type} src={temTypeImage(type)} width={30} />
             ))}
           </Flex>
-          <Text size="md" color="gray.1" align="center">
-            {species.name}
+          <Text
+            size="md"
+            color="gray.1"
+            align="center"
+            sx={{ whiteSpace: "nowrap" }}
+          >
+            {getName(species, language)}
           </Text>
         </Flex>
       </Flex>
@@ -81,7 +94,7 @@ const EffectivenessCell: FC<EffectivenessCellProps> = ({ attack, defense }) => {
 
 const speciesOptions = speciesList.map((species) => ({
   value: String(species.number),
-  label: species.name,
+  label: getName(species, "ja"),
 }));
 
 export const TypeMatchupTable: FC = () => {
@@ -106,9 +119,11 @@ export const TypeMatchupTable: FC = () => {
         <thead>
           <tr>
             <Box component="th" rowSpan={2}>
-              TemTem
+              <Text align="center">種族</Text>
             </Box>
-            <th colSpan={TemTypes.length}>Weakness & Resistance</th>
+            <th colSpan={TemTypes.length}>
+              <Text align="center">耐性</Text>
+            </th>
             <th rowSpan={2} />
           </tr>
           <tr>
@@ -134,7 +149,9 @@ export const TypeMatchupTable: FC = () => {
               ))}
               <td>
                 <Button
+                  aria-label="削除"
                   variant="light"
+                  color="red"
                   size="xs"
                   onClick={() => removeSpecies(species.number)}
                 >
