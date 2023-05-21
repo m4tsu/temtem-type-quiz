@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useTemSpeciesQuiz } from "./useTemSpeciesQuiz";
 import {
+  Box,
   Button,
   Card,
   Center,
@@ -107,29 +108,46 @@ export const TemSpeciesQuiz: FC = () => {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
-                    gap: "2px",
+                    gap: "4px",
                     alignItems: "center",
                   }}
                 >
-                  <Image
-                    src={iconImage(problem.species)}
-                    alt={getName(problem.species, language)}
-                    width={50}
-                    bg="dark.6"
-                  />
-                  <Text align="center" fw="bold" color="gray.1">
-                    {getName(problem.species, language)}
-                  </Text>
-                  <Flex justify="center" gap="xs">
-                    {problem.species.types.map((type) => (
-                      <Image
-                        key={type}
-                        src={temTypeImage(type)}
-                        alt={type}
-                        width={30}
-                      />
-                    ))}
+                  <Flex align="center" gap="xs">
+                    <Image
+                      src={iconImage(problem.species)}
+                      alt={getName(problem.species, language)}
+                      width={50}
+                      bg="dark.6"
+                    />
+                    <Flex justify="center">
+                      {problem.species.types.map((type) => (
+                        <Image
+                          key={type}
+                          src={temTypeImage(type)}
+                          alt={type}
+                          width={30}
+                        />
+                      ))}
+                    </Flex>
                   </Flex>
+                  <Box>
+                    <Text
+                      align="center"
+                      fw="bold"
+                      color="gray.1"
+                      sx={{ lineHeight: "1.2" }}
+                    >
+                      {getName(problem.species, "ja")}
+                    </Text>
+                    <Text
+                      align="center"
+                      fw="bold"
+                      color="gray.1"
+                      sx={{ lineHeight: "1.2" }}
+                    >
+                      {getName(problem.species, "en")}
+                    </Text>
+                  </Box>
                 </Card>
               </Flex>
             ))}
