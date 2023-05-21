@@ -10,7 +10,7 @@ import {
 } from "@mantine/core";
 import {
   TemTypeEffectivenessAgainstMultiple,
-  calculateEffectivenessAgainstMultiple,
+  calculateEffectiveness,
   temTypeImage,
 } from "../../../models/tem-type";
 import { useMultipleTypeQuiz } from "./useMultipleTypeQuiz";
@@ -152,7 +152,7 @@ export const MultipleTypeQuiz = () => {
                       )}
                     </Flex>
                     <Text align="center" size="xl" fw="bold" color="gray.1">
-                      {calculateEffectivenessAgainstMultiple(
+                      {calculateEffectiveness(
                         problem.quiz.attack,
                         problem.quiz.defense
                       )}

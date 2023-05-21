@@ -103,7 +103,7 @@ export const TemTypeCompatibilitiesMap: {
   },
 };
 
-export const calculateEffectiveness = (
+const calculateEffectivenessAgainstSingleType = (
   attack: TemType,
   defense: TemType
 ): TemTypeEffectiveNess => {
@@ -114,15 +114,15 @@ export const calculateEffectiveness = (
   return effectiveness;
 };
 
-export const calculateEffectivenessAgainstMultiple = (
+export const calculateEffectiveness = (
   attack: TemType,
-  defense: [TemType] | [TemType, TemType]
+  defense: readonly [TemType] | readonly [TemType, TemType]
 ): TemTypeEffectivenessAgainstMultiple => {
-  const ef1 = calculateEffectiveness(attack, defense[0]);
+  const ef1 = calculateEffectivenessAgainstSingleType(attack, defense[0]);
   if (defense.length === 1) {
     return ef1;
   }
-  const ef2 = calculateEffectiveness(attack, defense[1]);
+  const ef2 = calculateEffectivenessAgainstSingleType(attack, defense[1]);
   return (ef1 * ef2) as TemTypeEffectivenessAgainstMultiple;
 };
 

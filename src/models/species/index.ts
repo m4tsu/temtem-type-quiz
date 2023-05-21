@@ -34,3 +34,6 @@ export const getName = (species: Species, language: Language) => {
   }
   return species.name;
 };
+
+export const getIconImageUrl = (species: Species) =>
+  `https://temtem-api.mael.tech${species.icon}`;

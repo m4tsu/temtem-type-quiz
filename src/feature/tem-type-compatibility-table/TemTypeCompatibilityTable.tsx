@@ -12,7 +12,7 @@ type TdProps = {
   defense: TemType;
 };
 const Td: FC<TdProps> = ({ attack, defense }) => {
-  const effectiveness = calculateEffectiveness(attack, defense);
+  const effectiveness = calculateEffectiveness(attack, [defense]);
   if (effectiveness === 1) {
     return <td />;
   } else {

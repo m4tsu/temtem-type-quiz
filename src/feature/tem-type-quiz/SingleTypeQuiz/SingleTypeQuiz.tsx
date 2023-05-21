@@ -114,10 +114,9 @@ export const SingleTypeQuiz = () => {
                       />
                     </Flex>
                     <Text align="center" size="xl" fw="bold" color="gray.1">
-                      {calculateEffectiveness(
-                        problem.quiz.attack,
-                        problem.quiz.defense
-                      )}
+                      {calculateEffectiveness(problem.quiz.attack, [
+                        problem.quiz.defense,
+                      ])}
                       x
                     </Text>
                   </Card>

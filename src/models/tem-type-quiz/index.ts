@@ -5,7 +5,6 @@ import {
   TemTypeEffectivenessAgainstMultiple,
   TemTypes,
   calculateEffectiveness,
-  calculateEffectivenessAgainstMultiple,
 } from "../tem-type";
 
 export type SingleTypeQuiz = {
@@ -55,10 +54,9 @@ export const answerToSingleTypeQuiz = (
   quiz: SingleTypeQuiz,
   effectiveness: TemTypeEffectiveNess
 ): QuizResult => {
-  const correctEffectiveness = calculateEffectiveness(
-    quiz.attack,
-    quiz.defense
-  );
+  const correctEffectiveness = calculateEffectiveness(quiz.attack, [
+    quiz.defense,
+  ]);
   if (effectiveness === correctEffectiveness) {
     return "correct";
   }
@@ -69,7 +67,7 @@ export const answerToMultipleTypeQuiz = (
   quiz: MultipleTypeQuiz,
   effectiveness: TemTypeEffectivenessAgainstMultiple
 ): QuizResult => {
-  const correctEffectiveness = calculateEffectivenessAgainstMultiple(
+  const correctEffectiveness = calculateEffectiveness(
     quiz.attack,
     quiz.defense
   );

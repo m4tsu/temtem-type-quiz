@@ -2,6 +2,7 @@ import { Box, Container, Flex, Header, Tabs, Text, Title } from "@mantine/core";
 import { SingleTypeQuiz } from "./feature/tem-type-quiz/SingleTypeQuiz";
 import { MultipleTypeQuiz } from "./feature/tem-type-quiz/MutipleTypeQuiz";
 import { Suspense, lazy } from "react";
+import { TypeMatchupTable } from "./feature/type-matchup-table/TypeMatchupTable";
 
 const TemSpeciesQuiz = lazy(() => import("./feature/tem-species-quiz"));
 
@@ -38,6 +39,7 @@ function App() {
                   種族
                 </Text>
               </Tabs.Tab>
+              <Tabs.Tab value="matchup">*</Tabs.Tab>
             </Tabs.List>
             <Tabs.Panel value="single" pt="lg">
               <SingleTypeQuiz />
@@ -49,6 +51,9 @@ function App() {
               <Suspense fallback={"Loading..."}>
                 <TemSpeciesQuiz />
               </Suspense>
+            </Tabs.Panel>
+            <Tabs.Panel value="matchup" pt="lg">
+              <TypeMatchupTable />
             </Tabs.Panel>
           </Tabs>
         </Container>
