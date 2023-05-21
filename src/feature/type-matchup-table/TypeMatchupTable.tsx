@@ -1,4 +1,4 @@
-import { speciesJaNameMap, speciesList } from "@/data/species";
+import { speciesList } from "@/data/species";
 import { useLanguage } from "@/libs/i18next/i18n";
 import {
   Species,
