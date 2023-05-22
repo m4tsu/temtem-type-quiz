@@ -1,3 +1,4 @@
+"use client";
 import {
   Button,
   Card,
@@ -7,7 +8,7 @@ import {
   Image,
   SimpleGrid,
   Text,
-} from "@mantine/core";
+} from "@/components/ui";
 import { useSingleTypeQuiz } from "./useSingleQuiz";
 import {
   TemTypeEffectiveNess,

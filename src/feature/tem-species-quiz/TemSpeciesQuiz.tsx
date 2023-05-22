@@ -1,3 +1,4 @@
+"use client";
 import { FC } from "react";
 import { useTemSpeciesQuiz } from "./useTemSpeciesQuiz";
 import {
@@ -11,7 +12,7 @@ import {
   Image,
   SimpleGrid,
   Text,
-} from "@mantine/core";
+} from "@/components/ui";
 import { Species, getName } from "@/models/species";
 import { TemTypes, temTypeImage } from "@/models/tem-type";
 import { isValidGuess, useSpeciesTypesGuess } from "./useSpeciesTypesGuess";

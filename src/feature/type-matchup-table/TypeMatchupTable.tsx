@@ -1,3 +1,4 @@
+"use client";
 import { speciesList } from "@/data/species";
 import { useLanguage } from "@/libs/i18next/i18n";
 import {
@@ -21,7 +22,7 @@ import {
   Box,
   Text,
   Avatar,
-} from "@mantine/core";
+} from "@/components/ui";
 import { FC, useState } from "react";
 
 type TemTemCellProps = {

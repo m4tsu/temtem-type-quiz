@@ -1,4 +1,13 @@
-import { Box, Container, Flex, Header, Tabs, Text, Title } from "@mantine/core";
+"use client";
+import {
+  Box,
+  Container,
+  Flex,
+  Header,
+  Tabs,
+  Text,
+  Title,
+} from "@/components/ui";
 import { SingleTypeQuiz } from "./feature/tem-type-quiz/SingleTypeQuiz";
 import { MultipleTypeQuiz } from "./feature/tem-type-quiz/MutipleTypeQuiz";
 import { Suspense, lazy } from "react";
@@ -7,6 +16,7 @@ import { TypeMatchupTable } from "./feature/type-matchup-table/TypeMatchupTable"
 const TemSpeciesQuiz = lazy(() => import("./feature/tem-species-quiz"));
 
 function App() {
+  console.log("App");
   return (
     <Flex gap="md" direction="column" sx={{ height: "100vh" }}>
       <Header height={50}>

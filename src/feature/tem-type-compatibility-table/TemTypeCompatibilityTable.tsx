@@ -1,5 +1,6 @@
+"use client";
 import { FC } from "react";
-import { Box, Image, Table, Text } from "@mantine/core";
+import { Box, Image, Table, Text } from "@/components/ui";
 import {
   TemType,
   TemTypes,
