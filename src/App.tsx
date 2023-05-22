@@ -1,4 +1,6 @@
 "use client";
+import { Suspense, lazy } from "react";
+
 import {
   Box,
   Container,
@@ -8,9 +10,9 @@ import {
   Text,
   Title,
 } from "@/components/ui";
-import { SingleTypeQuiz } from "./feature/tem-type-quiz/SingleTypeQuiz";
+
 import { MultipleTypeQuiz } from "./feature/tem-type-quiz/MutipleTypeQuiz";
-import { Suspense, lazy } from "react";
+import { SingleTypeQuiz } from "./feature/tem-type-quiz/SingleTypeQuiz";
 import { TypeMatchupTable } from "./feature/type-matchup-table/TypeMatchupTable";
 
 const TemSpeciesQuiz = lazy(() => import("./feature/tem-species-quiz"));

@@ -1,12 +1,14 @@
 "use client";
-import { FC } from "react";
+
 import { Box, Image, Table, Text } from "@/components/ui";
+import type { TemType } from "@/models/tem-type";
 import {
-  TemType,
   TemTypes,
   calculateEffectiveness,
   temTypeImage,
 } from "@/models/tem-type";
+
+import type { FC } from "react";
 
 type TdProps = {
   attack: TemType;

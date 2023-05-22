@@ -3,9 +3,10 @@ import {
   speciesMap,
   speciesNumberList,
 } from "@/data/species";
-import { Language } from "@/libs/i18next/types";
+import type { Language } from "@/libs/i18next/types";
 import { randomInt } from "@/utils/randomInt";
-import { TemType } from "../tem-type";
+
+import type { TemType } from "../tem-type";
 
 export type Species = {
   number: number;

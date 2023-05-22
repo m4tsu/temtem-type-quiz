@@ -1,18 +1,6 @@
 "use client";
-import { speciesList } from "@/data/species";
-import { useLanguage } from "@/libs/i18next/i18n";
-import {
-  Species,
-  findSpecies,
-  getIconImageUrl,
-  getName,
-} from "@/models/species";
-import {
-  TemType,
-  TemTypes,
-  calculateEffectiveness,
-  temTypeImage,
-} from "@/models/tem-type";
+import { useState } from "react";
+
 import {
   Button,
   Flex,
@@ -23,7 +11,18 @@ import {
   Text,
   Avatar,
 } from "@/components/ui";
-import { FC, useState } from "react";
+import { speciesList } from "@/data/species";
+import { useLanguage } from "@/libs/i18next/i18n";
+import type { Species } from "@/models/species";
+import { findSpecies, getIconImageUrl, getName } from "@/models/species";
+import type { TemType } from "@/models/tem-type";
+import {
+  TemTypes,
+  calculateEffectiveness,
+  temTypeImage,
+} from "@/models/tem-type";
+
+import type { FC } from "react";
 
 type TemTemCellProps = {
   species: Species;
@@ -38,7 +37,12 @@ const TemTemCell: FC<TemTemCellProps> = ({ species }) => {
         <Flex direction="column" align="center" w="100%">
           <Flex>
             {species.types.map((type) => (
-              <Image key={type} src={temTypeImage(type)} width={30} />
+              <Image
+                key={type}
+                src={temTypeImage(type)}
+                alt={type}
+                width={30}
+              />
             ))}
           </Flex>
           <Text

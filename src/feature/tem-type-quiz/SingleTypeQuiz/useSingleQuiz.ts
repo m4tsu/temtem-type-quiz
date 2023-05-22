@@ -1,11 +1,12 @@
 "use client";
 import { useState } from "react";
+
+import type { TemTypeEffectiveNess } from "@/models/tem-type";
+import type { SingleTypeQuiz } from "@/models/tem-type-quiz";
 import {
-  SingleTypeQuiz,
   answerToSingleTypeQuiz,
   generateSingleTypeQuiz,
 } from "@/models/tem-type-quiz";
-import { TemTypeEffectiveNess } from "@/models/tem-type";
 import { shuffleArray } from "@/utils/shuffleArray";
 
 type Problem = {

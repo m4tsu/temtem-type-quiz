@@ -9,11 +9,9 @@ import {
   SimpleGrid,
   Text,
 } from "@/components/ui";
-import {
-  TemTypeEffectivenessAgainstMultiple,
-  calculateEffectiveness,
-  temTypeImage,
-} from "@/models/tem-type";
+import type { TemTypeEffectivenessAgainstMultiple } from "@/models/tem-type";
+import { calculateEffectiveness, temTypeImage } from "@/models/tem-type";
+
 import { useMultipleTypeQuiz } from "./useMultipleTypeQuiz";
 
 const EffectivenessList = [
@@ -56,7 +54,11 @@ export const MultipleTypeQuiz = () => {
                 width={60}
                 alt={currentProblem.quiz.attack}
               />
-              <Image src="/arrow-right-solid.svg" width={40} />
+              <Image
+                src="/arrow-right-solid.svg"
+                alt={"against to"}
+                width={40}
+              />
               {currentProblem.quiz.defense.length === 1 ? (
                 <Image
                   src={temTypeImage(currentProblem.quiz.defense[0])}
@@ -127,7 +129,11 @@ export const MultipleTypeQuiz = () => {
                         alt={problem.quiz.attack}
                         width={40}
                       />
-                      <Image src="/arrow-right-solid.svg" width={25} />
+                      <Image
+                        src="/arrow-right-solid.svg"
+                        alt={"against to"}
+                        width={25}
+                      />
                       {problem.quiz.defense.length === 1 ? (
                         <Image
                           src={temTypeImage(problem.quiz.defense[0])}

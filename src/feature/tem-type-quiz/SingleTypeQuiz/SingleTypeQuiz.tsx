@@ -9,12 +9,10 @@ import {
   SimpleGrid,
   Text,
 } from "@/components/ui";
+import type { TemTypeEffectiveNess } from "@/models/tem-type";
+import { calculateEffectiveness, temTypeImage } from "@/models/tem-type";
+
 import { useSingleTypeQuiz } from "./useSingleQuiz";
-import {
-  TemTypeEffectiveNess,
-  calculateEffectiveness,
-  temTypeImage,
-} from "@/models/tem-type";
 
 const EffectivenessList = [0.5, 1, 2] satisfies TemTypeEffectiveNess[];
 
@@ -54,7 +52,7 @@ export const SingleTypeQuiz = () => {
                 alt={currentProblem.quiz.attack}
                 width={60}
               />
-              <Image src="/arrow-right-solid.svg" width={40} />
+              <Image src="/arrow-right-solid.svg" alt="against to" width={40} />
               <Image
                 src={temTypeImage(currentProblem.quiz.defense)}
                 alt={currentProblem.quiz.defense}
@@ -107,7 +105,11 @@ export const SingleTypeQuiz = () => {
                         alt={problem.quiz.attack}
                         width={40}
                       />
-                      <Image src="/arrow-right-solid.svg" width={25} />
+                      <Image
+                        src="/arrow-right-solid.svg"
+                        alt="against to"
+                        width={25}
+                      />
                       <Image
                         src={temTypeImage(problem.quiz.defense)}
                         alt={problem.quiz.defense}

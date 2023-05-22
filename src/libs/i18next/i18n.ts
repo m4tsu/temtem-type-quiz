@@ -1,13 +1,15 @@
 "use client";
 import i18n from "i18next";
+import { useCallback } from "react";
 import {
   initReactI18next,
   useTranslation as useTranslation_,
 } from "react-i18next";
+
 import homeEn from "@/locales/page/home/en.json";
 import homeJa from "@/locales/page/home/ja.json";
-import { Language } from "./types";
-import { useCallback } from "react";
+
+import type { Language } from "./types";
 
 export const defaultNS = "page" as const;
 export const resources = {

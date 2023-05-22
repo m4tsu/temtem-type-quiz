@@ -1,11 +1,12 @@
 "use client";
 import { useState } from "react";
+
+import type { TemTypeEffectivenessAgainstMultiple } from "@/models/tem-type";
+import type { MultipleTypeQuiz } from "@/models/tem-type-quiz";
 import {
-  MultipleTypeQuiz,
   answerToMultipleTypeQuiz,
   generateMultipleTypeQuiz,
 } from "@/models/tem-type-quiz";
-import { TemTypeEffectivenessAgainstMultiple } from "@/models/tem-type";
 import { shuffleArray } from "@/utils/shuffleArray";
 
 type Problem = {

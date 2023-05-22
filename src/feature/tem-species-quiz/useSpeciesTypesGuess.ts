@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { TemType } from "@/models/tem-type";
+
+import type { TemType } from "@/models/tem-type";
 
 type Guess = [TemType] | [TemType, TemType];
 

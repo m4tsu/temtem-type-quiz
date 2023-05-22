@@ -1,7 +1,8 @@
 "use client";
-import { initialize } from "@/libs/i18next/i18n";
 import { Box, MantineProvider } from "@/components/ui";
-import { FC, PropsWithChildren } from "react";
+import { initialize } from "@/libs/i18next/i18n";
+
+import type { FC, PropsWithChildren } from "react";
 
 initialize();
 

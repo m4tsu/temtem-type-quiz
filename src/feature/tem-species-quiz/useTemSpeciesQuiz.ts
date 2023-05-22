@@ -1,12 +1,10 @@
 "use client";
 import { useState } from "react";
-import {
-  Species,
-  findSpecies,
-  pickRandomSpeciesNumber,
-} from "@/models/species";
-import { TemType } from "@/models/tem-type";
+
+import type { Species } from "@/models/species";
+import { findSpecies, pickRandomSpeciesNumber } from "@/models/species";
 import { answerToSpeciesQuiz } from "@/models/species-quiz";
+import type { TemType } from "@/models/tem-type";
 import { shuffleArray } from "@/utils/shuffleArray";
 
 type Problem = {

@@ -1,10 +1,11 @@
 import { randomInt } from "@/utils/randomInt";
-import {
+
+import { TemTypes, calculateEffectiveness } from "../tem-type";
+
+import type {
   TemType,
   TemTypeEffectiveNess,
   TemTypeEffectivenessAgainstMultiple,
-  TemTypes,
-  calculateEffectiveness,
 } from "../tem-type";
 
 export type SingleTypeQuiz = {

@@ -1,6 +1,5 @@
 "use client";
-import { FC } from "react";
-import { useTemSpeciesQuiz } from "./useTemSpeciesQuiz";
+
 import {
   Box,
   Button,
@@ -13,10 +12,15 @@ import {
   SimpleGrid,
   Text,
 } from "@/components/ui";
-import { Species, getName } from "@/models/species";
-import { TemTypes, temTypeImage } from "@/models/tem-type";
-import { isValidGuess, useSpeciesTypesGuess } from "./useSpeciesTypesGuess";
 import { useLanguage } from "@/libs/i18next/i18n";
+import type { Species } from "@/models/species";
+import { getName } from "@/models/species";
+import { TemTypes, temTypeImage } from "@/models/tem-type";
+
+import { isValidGuess, useSpeciesTypesGuess } from "./useSpeciesTypesGuess";
+import { useTemSpeciesQuiz } from "./useTemSpeciesQuiz";
+
+import type { FC } from "react";
 
 const iconImage = (species: Species) =>
   `https://temtem-api.mael.tech${species.icon}`;
@@ -175,7 +179,11 @@ export const TemSpeciesQuiz: FC = () => {
                   }}
                 >
                   {selectedTypes[i] ? (
-                    <Image src={temTypeImage(selectedTypes[i])} width={40} />
+                    <Image
+                      src={temTypeImage(selectedTypes[i])}
+                      alt={selectedTypes[i]}
+                      width={40}
+                    />
                   ) : (
                     <Text size="xl" fw="bold" w="40px" h="40px" align="center">
                       *
