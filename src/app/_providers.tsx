@@ -1,20 +1,20 @@
-"use client";
-import { Box, MantineProvider } from "@/components/ui";
-import { initialize } from "@/libs/i18next/i18n";
+'use client'
+import { Box, MantineProvider } from '@/components/ui'
+import { initialize } from '@/libs/i18next/i18n'
 
-import type { FC, PropsWithChildren } from "react";
+import type { FC, PropsWithChildren } from 'react'
 
-initialize();
+initialize()
 
 export const RootProviders: FC<PropsWithChildren> = ({ children }) => {
-  console.log("RootProviders");
+  console.log('RootProviders')
   return (
     <MantineProvider
-      theme={{ colorScheme: "dark" }}
+      theme={{ colorScheme: 'dark' }}
       withGlobalStyles
       withNormalizeCSS
     >
       <Box>{children}</Box>
     </MantineProvider>
-  );
-};
+  )
+}

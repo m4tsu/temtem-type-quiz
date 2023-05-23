@@ -1,23 +1,23 @@
-"use client";
+'use client'
 
-import { Box, Image, Table, Text } from "@/components/ui";
-import type { TemType } from "@/models/tem-type";
+import { Box, Image, Table, Text } from '@/components/ui'
+import type { TemType } from '@/models/tem-type'
 import {
   TemTypes,
   calculateEffectiveness,
   temTypeImage,
-} from "@/models/tem-type";
+} from '@/models/tem-type'
 
-import type { FC } from "react";
+import type { FC } from 'react'
 
 type TdProps = {
-  attack: TemType;
-  defense: TemType;
-};
+  attack: TemType
+  defense: TemType
+}
 const Td: FC<TdProps> = ({ attack, defense }) => {
-  const effectiveness = calculateEffectiveness(attack, [defense]);
+  const effectiveness = calculateEffectiveness(attack, [defense])
   if (effectiveness === 1) {
-    return <td />;
+    return <td />
   } else {
     return (
       <Box
@@ -34,9 +34,9 @@ const Td: FC<TdProps> = ({ attack, defense }) => {
           {effectiveness}x
         </Text>
       </Box>
-    );
+    )
   }
-};
+}
 
 // 相性設定の確認のため作ったけど使わないかも
 export const TemTypeCompatibilityTable: FC = () => {
@@ -67,5 +67,5 @@ export const TemTypeCompatibilityTable: FC = () => {
         ))}
       </tbody>
     </Table>
-  );
-};
+  )
+}

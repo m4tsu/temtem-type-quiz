@@ -1,2 +1,2 @@
-"use client";
-export * from "@mantine/core";
+'use client'
+export * from '@mantine/core'

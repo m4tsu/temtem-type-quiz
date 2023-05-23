@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import {
   Box,
@@ -11,22 +11,22 @@ import {
   Image,
   SimpleGrid,
   Text,
-} from "@/components/ui";
-import { useLanguage } from "@/libs/i18next/i18n";
-import type { Species } from "@/models/species";
-import { getName } from "@/models/species";
-import { TemTypes, temTypeImage } from "@/models/tem-type";
+} from '@/components/ui'
+import { useLanguage } from '@/libs/i18next/i18n'
+import type { Species } from '@/models/species'
+import { getName } from '@/models/species'
+import { TemTypes, temTypeImage } from '@/models/tem-type'
 
-import { isValidGuess, useSpeciesTypesGuess } from "./useSpeciesTypesGuess";
-import { useTemSpeciesQuiz } from "./useTemSpeciesQuiz";
+import { isValidGuess, useSpeciesTypesGuess } from './useSpeciesTypesGuess'
+import { useTemSpeciesQuiz } from './useTemSpeciesQuiz'
 
-import type { FC } from "react";
+import type { FC } from 'react'
 
 const iconImage = (species: Species) =>
-  `https://temtem-api.mael.tech${species.icon}`;
+  `https://temtem-api.mael.tech${species.icon}`
 
 export const TemSpeciesQuiz: FC = () => {
-  const { language } = useLanguage();
+  const { language } = useLanguage()
   const {
     round,
     problems,
@@ -36,15 +36,15 @@ export const TemSpeciesQuiz: FC = () => {
     answerCurrentProblem,
     reset,
     regenerateProblems,
-  } = useTemSpeciesQuiz();
+  } = useTemSpeciesQuiz()
 
   const { selectedTypes, toggleType, resetSelectedTypes } =
-    useSpeciesTypesGuess();
+    useSpeciesTypesGuess()
 
   return (
     <Flex direction="column" gap="lg" justify="center">
       <Flex
-        sx={{ width: "100%" }}
+        sx={{ width: '100%' }}
         direction="column"
         gap="md"
         align="center"
@@ -80,41 +80,41 @@ export const TemSpeciesQuiz: FC = () => {
         <Flex direction="column" gap="md">
           <Grid grow>
             <Grid.Col span={6}>
-              <Button onClick={reset} sx={{ width: "100%" }}>
+              <Button onClick={reset} sx={{ width: '100%' }}>
                 もう一度
               </Button>
             </Grid.Col>
             <Grid.Col span={6}>
-              <Button onClick={regenerateProblems} sx={{ width: "100%" }}>
+              <Button onClick={regenerateProblems} sx={{ width: '100%' }}>
                 別の問題
               </Button>
             </Grid.Col>
           </Grid>
           <SimpleGrid
             sx={{
-              display: "grid",
-              gap: "8px",
-              gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
+              display: 'grid',
+              gap: '8px',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))',
             }}
           >
             {problems.map((problem, i) => (
               <Flex
                 key={i}
                 sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
                 }}
               >
                 <Card
-                  bg={problem.status === "correct" ? "green.6" : "red.6"}
+                  bg={problem.status === 'correct' ? 'green.6' : 'red.6'}
                   p="xs"
                   sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    gap: "4px",
-                    alignItems: "center",
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    gap: '4px',
+                    alignItems: 'center',
                   }}
                 >
                   <Flex align="center" gap="xs">
@@ -140,17 +140,17 @@ export const TemSpeciesQuiz: FC = () => {
                       align="center"
                       fw="bold"
                       color="gray.1"
-                      sx={{ lineHeight: "1.2" }}
+                      sx={{ lineHeight: '1.2' }}
                     >
-                      {getName(problem.species, "ja")}
+                      {getName(problem.species, 'ja')}
                     </Text>
                     <Text
                       align="center"
                       fw="bold"
                       color="gray.1"
-                      sx={{ lineHeight: "1.2" }}
+                      sx={{ lineHeight: '1.2' }}
                     >
-                      {getName(problem.species, "en")}
+                      {getName(problem.species, 'en')}
                     </Text>
                   </Box>
                 </Card>
@@ -173,9 +173,9 @@ export const TemSpeciesQuiz: FC = () => {
                   sx={{
                     width: 60,
                     height: 60,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
                   }}
                 >
                   {selectedTypes[i] ? (
@@ -195,12 +195,12 @@ export const TemSpeciesQuiz: FC = () => {
           </Flex>
           <SimpleGrid
             sx={{
-              width: "80%",
-              margin: "0 auto",
-              display: "grid",
-              gap: "8px",
-              gridTemplateColumns: "repeat(auto-fill, minmax(60px, 20%))",
-              justifyContent: "center",
+              width: '80%',
+              margin: '0 auto',
+              display: 'grid',
+              gap: '8px',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(60px, 20%))',
+              justifyContent: 'center',
             }}
           >
             {TemTypes.map((type) => (
@@ -220,14 +220,14 @@ export const TemSpeciesQuiz: FC = () => {
             ))}
           </SimpleGrid>
           <Center
-            sx={{ width: "70%", justifyContent: "center", margin: "0 auto" }}
+            sx={{ width: '70%', justifyContent: 'center', margin: '0 auto' }}
           >
             {isValidGuess(selectedTypes) ? (
               <Button
                 fullWidth
                 onClick={() => {
-                  answerCurrentProblem(selectedTypes);
-                  resetSelectedTypes();
+                  answerCurrentProblem(selectedTypes)
+                  resetSelectedTypes()
                 }}
               >
                 決定
@@ -241,5 +241,5 @@ export const TemSpeciesQuiz: FC = () => {
         </Flex>
       )}
     </Flex>
-  );
-};
+  )
+}

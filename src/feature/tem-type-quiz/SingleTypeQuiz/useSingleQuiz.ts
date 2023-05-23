@@ -1,70 +1,70 @@
-"use client";
-import { useState } from "react";
+'use client'
+import { useState } from 'react'
 
-import type { TemTypeEffectiveNess } from "@/models/tem-type";
-import type { SingleTypeQuiz } from "@/models/tem-type-quiz";
+import type { TemTypeEffectiveNess } from '@/models/tem-type'
+import type { SingleTypeQuiz } from '@/models/tem-type-quiz'
 import {
   answerToSingleTypeQuiz,
   generateSingleTypeQuiz,
-} from "@/models/tem-type-quiz";
-import { shuffleArray } from "@/utils/shuffleArray";
+} from '@/models/tem-type-quiz'
+import { shuffleArray } from '@/utils/shuffleArray'
 
 type Problem = {
-  quiz: SingleTypeQuiz;
-  status: "correct" | "incorrect" | "unanswered";
-};
+  quiz: SingleTypeQuiz
+  status: 'correct' | 'incorrect' | 'unanswered'
+}
 
-const MAX_ROUND = 12;
+const MAX_ROUND = 12
 
 const generateProblems = () => {
-  const problems: Problem[] = [];
+  const problems: Problem[] = []
   for (let i = 0; i < MAX_ROUND; i++) {
     problems.push({
       quiz: generateSingleTypeQuiz(),
-      status: "unanswered",
-    });
+      status: 'unanswered',
+    })
   }
-  return problems;
-};
+  return problems
+}
 
 const resetProblems = (problems: Problem[]): Problem[] => {
-  return problems.map((p) => ({ ...p, status: "unanswered" }));
-};
+  return problems.map((p) => ({ ...p, status: 'unanswered' }))
+}
 
 export const useSingleTypeQuiz = () => {
-  const [round, setRound] = useState(1);
-  const [problems, setProblems] = useState<Problem[]>(generateProblems());
+  const [round, setRound] = useState(1)
+  const [problems, setProblems] = useState<Problem[]>(generateProblems())
 
-  const isLastRound = round === MAX_ROUND;
-  const correctCount = problems.filter((p) => p.status === "correct").length;
-  const currentProblemIndex = round - 1;
-  const currentProblem = problems[currentProblemIndex];
-  const isEnded = isLastRound && currentProblem.status !== "unanswered";
+  const isLastRound = round === MAX_ROUND
+  const correctCount = problems.filter((p) => p.status === 'correct').length
+  const currentProblemIndex = round - 1
+  const currentProblem = problems[currentProblemIndex]
+  const isEnded = isLastRound && currentProblem.status !== 'unanswered'
 
   const answerCurrentProblem = (effectiveness: TemTypeEffectiveNess) => {
-    const result = answerToSingleTypeQuiz(currentProblem.quiz, effectiveness);
+    const result = answerToSingleTypeQuiz(currentProblem.quiz, effectiveness)
     setProblems((prevProblems) => {
-      const newProblems = [...prevProblems];
+      const newProblems = [...prevProblems]
       newProblems[currentProblemIndex] = {
         ...currentProblem,
         status: result,
-      };
-      return newProblems;
-    });
+      }
+      return newProblems
+    })
     if (!isLastRound) {
-      setRound(round + 1);
+      setRound(round + 1)
     }
-  };
+  }
 
   const reset = () => {
-    setRound(1);
-    setProblems((prev) => shuffleArray(resetProblems(prev)));
-  };
+    setRound(1)
+    setProblems((prev) => shuffleArray(resetProblems(prev)))
+  }
 
   const regenerateProblems = () => {
-    setRound(1);
-    setProblems(generateProblems());
-  };
+    setRound(1)
+    setProblems(generateProblems())
+  }
 
   return {
     round,
@@ -75,5 +75,5 @@ export const useSingleTypeQuiz = () => {
     answerCurrentProblem,
     reset,
     regenerateProblems,
-  };
-};
+  }
+}

@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import {
   Button,
   Card,
@@ -8,15 +8,15 @@ import {
   Image,
   SimpleGrid,
   Text,
-} from "@/components/ui";
-import type { TemTypeEffectivenessAgainstMultiple } from "@/models/tem-type";
-import { calculateEffectiveness, temTypeImage } from "@/models/tem-type";
+} from '@/components/ui'
+import type { TemTypeEffectivenessAgainstMultiple } from '@/models/tem-type'
+import { calculateEffectiveness, temTypeImage } from '@/models/tem-type'
 
-import { useMultipleTypeQuiz } from "./useMultipleTypeQuiz";
+import { useMultipleTypeQuiz } from './useMultipleTypeQuiz'
 
 const EffectivenessList = [
   0.25, 0.5, 1, 2, 4,
-] satisfies TemTypeEffectivenessAgainstMultiple[];
+] satisfies TemTypeEffectivenessAgainstMultiple[]
 
 export const MultipleTypeQuiz = () => {
   const {
@@ -28,12 +28,12 @@ export const MultipleTypeQuiz = () => {
     answerCurrentProblem,
     reset,
     regenerateProblems,
-  } = useMultipleTypeQuiz();
+  } = useMultipleTypeQuiz()
 
   return (
     <Flex direction="column" gap="lg" justify="center">
       <Flex
-        sx={{ width: "100%" }}
+        sx={{ width: '100%' }}
         direction="column"
         gap="md"
         align="center"
@@ -48,7 +48,7 @@ export const MultipleTypeQuiz = () => {
             <Text size="lg" fw="bold">
               {round}問目 ({`${problems.length}問中`})
             </Text>
-            <Flex sx={{ width: "100%" }} align="center" justify="center">
+            <Flex sx={{ width: '100%' }} align="center" justify="center">
               <Image
                 src={temTypeImage(currentProblem.quiz.attack)}
                 width={60}
@@ -56,7 +56,7 @@ export const MultipleTypeQuiz = () => {
               />
               <Image
                 src="/arrow-right-solid.svg"
-                alt={"against to"}
+                alt={'against to'}
                 width={40}
               />
               {currentProblem.quiz.defense.length === 1 ? (
@@ -92,35 +92,35 @@ export const MultipleTypeQuiz = () => {
           <Flex direction="column" gap="md">
             <Grid grow>
               <Grid.Col span={6}>
-                <Button onClick={reset} sx={{ width: "100%" }}>
+                <Button onClick={reset} sx={{ width: '100%' }}>
                   もう一度
                 </Button>
               </Grid.Col>
               <Grid.Col span={6}>
-                <Button onClick={regenerateProblems} sx={{ width: "100%" }}>
+                <Button onClick={regenerateProblems} sx={{ width: '100%' }}>
                   別の問題
                 </Button>
               </Grid.Col>
             </Grid>
             <SimpleGrid
               sx={{
-                display: "grid",
-                gap: "8px",
-                gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
+                display: 'grid',
+                gap: '8px',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))',
               }}
             >
               {problems.map((problem, i) => (
                 <Flex
                   key={i}
                   sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
                   }}
                 >
-                  <Card bg={problem.status === "correct" ? "green.6" : "red.6"}>
+                  <Card bg={problem.status === 'correct' ? 'green.6' : 'red.6'}>
                     <Flex
-                      sx={{ width: "100%" }}
+                      sx={{ width: '100%' }}
                       align="center"
                       justify="center"
                     >
@@ -131,7 +131,7 @@ export const MultipleTypeQuiz = () => {
                       />
                       <Image
                         src="/arrow-right-solid.svg"
-                        alt={"against to"}
+                        alt={'against to'}
                         width={25}
                       />
                       {problem.quiz.defense.length === 1 ? (
@@ -171,14 +171,14 @@ export const MultipleTypeQuiz = () => {
             </SimpleGrid>
           </Flex>
         ) : (
-          <Card sx={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          <Card sx={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {EffectivenessList.map((effectiveness) => (
               <Button
                 key={`${effectiveness}`}
                 onClick={() => {
-                  answerCurrentProblem(effectiveness);
+                  answerCurrentProblem(effectiveness)
                 }}
-                sx={{ fontSize: 18, fontWeight: "bold" }}
+                sx={{ fontSize: 18, fontWeight: 'bold' }}
               >
                 {effectiveness}x
               </Button>
@@ -187,5 +187,5 @@ export const MultipleTypeQuiz = () => {
         )}
       </Flex>
     </Flex>
-  );
-};
+  )
+}

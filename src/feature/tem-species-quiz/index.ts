@@ -1,3 +1,3 @@
-import { TemSpeciesQuiz } from "./TemSpeciesQuiz";
+import { TemSpeciesQuiz } from './TemSpeciesQuiz'
 
-export default TemSpeciesQuiz;
+export default TemSpeciesQuiz

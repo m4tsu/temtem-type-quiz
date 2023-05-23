@@ -1,5 +1,5 @@
-"use client";
-import { useState } from "react";
+'use client'
+import { useState } from 'react'
 
 import {
   Button,
@@ -10,25 +10,25 @@ import {
   Box,
   Text,
   Avatar,
-} from "@/components/ui";
-import { speciesList } from "@/data/species";
-import { useLanguage } from "@/libs/i18next/i18n";
-import type { Species } from "@/models/species";
-import { findSpecies, getIconImageUrl, getName } from "@/models/species";
-import type { TemType } from "@/models/tem-type";
+} from '@/components/ui'
+import { speciesList } from '@/data/species'
+import { useLanguage } from '@/libs/i18next/i18n'
+import type { Species } from '@/models/species'
+import { findSpecies, getIconImageUrl, getName } from '@/models/species'
+import type { TemType } from '@/models/tem-type'
 import {
   TemTypes,
   calculateEffectiveness,
   temTypeImage,
-} from "@/models/tem-type";
+} from '@/models/tem-type'
 
-import type { FC } from "react";
+import type { FC } from 'react'
 
 type TemTemCellProps = {
-  species: Species;
-};
+  species: Species
+}
 const TemTemCell: FC<TemTemCellProps> = ({ species }) => {
-  const { language } = useLanguage();
+  const { language } = useLanguage()
 
   return (
     <Box component="td" p="4px!important">
@@ -49,22 +49,22 @@ const TemTemCell: FC<TemTemCellProps> = ({ species }) => {
             size="md"
             color="gray.1"
             align="center"
-            sx={{ whiteSpace: "nowrap" }}
+            sx={{ whiteSpace: 'nowrap' }}
           >
             {getName(species, language)}
           </Text>
         </Flex>
       </Flex>
     </Box>
-  );
-};
+  )
+}
 
 type EffectivenessCellProps = {
-  attack: TemType;
-  defense: Species["types"];
-};
+  attack: TemType
+  defense: Species['types']
+}
 const EffectivenessCell: FC<EffectivenessCellProps> = ({ attack, defense }) => {
-  const effectiveness = calculateEffectiveness(attack, defense);
+  const effectiveness = calculateEffectiveness(attack, defense)
 
   if (effectiveness === 1) {
     return (
@@ -73,7 +73,7 @@ const EffectivenessCell: FC<EffectivenessCellProps> = ({ attack, defense }) => {
           -
         </Text>
       </Box>
-    );
+    )
   }
   return (
     <Box
@@ -94,29 +94,29 @@ const EffectivenessCell: FC<EffectivenessCellProps> = ({ attack, defense }) => {
         {effectiveness}x
       </Text>
     </Box>
-  );
-};
+  )
+}
 
 const speciesOptions = speciesList.map((species) => ({
   value: String(species.number),
-  label: getName(species, "ja"),
-}));
+  label: getName(species, 'ja'),
+}))
 
 export const TypeMatchupTable: FC = () => {
-  const [selectedSpeciesList, setSelectedSpeciesList] = useState<Species[]>([]);
-  const addSpecies = (speciesNumber: Species["number"]) => {
-    const species = findSpecies(speciesNumber);
-    setSelectedSpeciesList((prev) => [...prev, species]);
-  };
-  const removeSpecies = (speciesNumber: Species["number"]) => {
+  const [selectedSpeciesList, setSelectedSpeciesList] = useState<Species[]>([])
+  const addSpecies = (speciesNumber: Species['number']) => {
+    const species = findSpecies(speciesNumber)
+    setSelectedSpeciesList((prev) => [...prev, species])
+  }
+  const removeSpecies = (speciesNumber: Species['number']) => {
     setSelectedSpeciesList((prev) =>
       prev.filter((s) => s.number !== speciesNumber)
-    );
-  };
+    )
+  }
 
   const [selectedSpeciesNumber, setSelectedSpeciesNumber] = useState<
-    Species["number"] | null
-  >(null);
+    Species['number'] | null
+  >(null)
 
   return (
     <Flex direction="column" gap="md">
@@ -188,5 +188,5 @@ export const TypeMatchupTable: FC = () => {
         </Button>
       </Flex>
     </Flex>
-  );
-};
+  )
+}
