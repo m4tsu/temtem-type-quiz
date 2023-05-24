@@ -7,6 +7,7 @@ import { Select } from '@/components/ui'
 import { Button } from '@/components/ui/Button'
 import { speciesList } from '@/data/species'
 import { useLanguage } from '@/libs/i18next/i18n'
+import { imageLoader } from '@/libs/nextjs/imageLoader'
 import type { Species } from '@/models/species'
 import { findSpecies, getIconImageUrl, getName } from '@/models/species'
 import type { TemType } from '@/models/tem-type'
@@ -30,6 +31,7 @@ const TemTemCell: FC<TemTemCellProps> = ({ species }) => {
         <Image
           height={48}
           width={48}
+          loader={imageLoader}
           src={getIconImageUrl(species)}
           alt={species.name}
         />
@@ -38,6 +40,7 @@ const TemTemCell: FC<TemTemCellProps> = ({ species }) => {
             {species.types.map((type) => (
               <Image
                 key={type}
+                loader={imageLoader}
                 src={temTypeImage(type)}
                 alt={type}
                 height={30}
@@ -127,6 +130,7 @@ export const TypeMatchupTable: FC = () => {
               <th className={cellClassName} key={type}>
                 <div className="flex justify-center">
                   <Image
+                    loader={imageLoader}
                     src={temTypeImage(type)}
                     alt={type}
                     height={30}

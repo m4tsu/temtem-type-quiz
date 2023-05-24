@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 
 import { Button } from '@/components/ui/Button'
+import { imageLoader } from '@/libs/nextjs/imageLoader'
 import type { TemTypeEffectivenessAgainstMultiple } from '@/models/tem-type'
 import { calculateEffectiveness, temTypeImage } from '@/models/tem-type'
 
@@ -38,12 +39,14 @@ export const MultipleTypeQuiz = () => {
             </div>
             <div className="flex w-full items-center justify-center">
               <Image
+                loader={imageLoader}
                 src={temTypeImage(currentProblem.quiz.attack)}
                 height={60}
                 width={60}
                 alt={currentProblem.quiz.attack}
               />
               <Image
+                loader={imageLoader}
                 src="/arrow-right-solid.svg"
                 alt={'against to'}
                 height={40}
@@ -51,6 +54,7 @@ export const MultipleTypeQuiz = () => {
               />
               {currentProblem.quiz.defense.length === 1 ? (
                 <Image
+                  loader={imageLoader}
                   src={temTypeImage(currentProblem.quiz.defense[0])}
                   alt={currentProblem.quiz.defense[0]}
                   height={60}
@@ -59,6 +63,7 @@ export const MultipleTypeQuiz = () => {
               ) : (
                 <div className="flex items-center">
                   <Image
+                    loader={imageLoader}
                     src={temTypeImage(currentProblem.quiz.defense[0])}
                     alt={currentProblem.quiz.defense[0]}
                     height={60}
@@ -66,6 +71,7 @@ export const MultipleTypeQuiz = () => {
                   />
                   <div className="text-3xl font-bold">+</div>
                   <Image
+                    loader={imageLoader}
                     src={temTypeImage(currentProblem.quiz.defense[1])}
                     alt={currentProblem.quiz.defense[1]}
                     height={60}
@@ -100,12 +106,14 @@ export const MultipleTypeQuiz = () => {
                 >
                   <div className="flex w-full items-center justify-center">
                     <Image
+                      loader={imageLoader}
                       src={temTypeImage(problem.quiz.attack)}
                       alt={problem.quiz.attack}
                       height={40}
                       width={40}
                     />
                     <Image
+                      loader={imageLoader}
                       src="/arrow-right-solid.svg"
                       alt={'against to'}
                       height={25}
@@ -113,6 +121,7 @@ export const MultipleTypeQuiz = () => {
                     />
                     {problem.quiz.defense.length === 1 ? (
                       <Image
+                        loader={imageLoader}
                         src={temTypeImage(problem.quiz.defense[0])}
                         alt={problem.quiz.defense[0]}
                         height={40}
@@ -121,6 +130,7 @@ export const MultipleTypeQuiz = () => {
                     ) : (
                       <div className="flex items-center">
                         <Image
+                          loader={imageLoader}
                           src={temTypeImage(problem.quiz.defense[0])}
                           alt={problem.quiz.defense[0]}
                           height={40}
@@ -130,6 +140,7 @@ export const MultipleTypeQuiz = () => {
                           +
                         </div>
                         <Image
+                          loader={imageLoader}
                           src={temTypeImage(problem.quiz.defense[1])}
                           alt={problem.quiz.defense[1]}
                           height={40}

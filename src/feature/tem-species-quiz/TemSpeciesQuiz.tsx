@@ -5,6 +5,7 @@ import Image from 'next/image'
 
 import { Button } from '@/components/ui/Button'
 import { useLanguage } from '@/libs/i18next/i18n'
+import { imageLoader } from '@/libs/nextjs/imageLoader'
 import type { Species } from '@/models/species'
 import { getName } from '@/models/species'
 import { TemTypes, temTypeImage } from '@/models/tem-type'
@@ -49,6 +50,7 @@ export const TemSpeciesQuiz: FC = () => {
             {/* <Flex direction="column" gap="4px" justify="center"> */}
             <div className="rounded-md border border-solid border-zinc-700">
               <Image
+                loader={imageLoader}
                 src={iconImage(currentProblem.species)}
                 alt={currentProblem.species.name}
                 height={80}
@@ -84,6 +86,7 @@ export const TemSpeciesQuiz: FC = () => {
               >
                 <div className="flex items-center gap-4">
                   <Image
+                    loader={imageLoader}
                     className=" rounded-sm bg-zinc-800"
                     src={iconImage(problem.species)}
                     alt={getName(problem.species, language)}
@@ -93,6 +96,7 @@ export const TemSpeciesQuiz: FC = () => {
                   <div className="flex justify-center">
                     {problem.species.types.map((type) => (
                       <Image
+                        loader={imageLoader}
                         key={type}
                         src={temTypeImage(type)}
                         alt={type}
@@ -122,6 +126,7 @@ export const TemSpeciesQuiz: FC = () => {
                 >
                   {selectedTypes[i] ? (
                     <Image
+                      loader={imageLoader}
                       src={temTypeImage(selectedTypes[i])}
                       alt={selectedTypes[i]}
                       height={40}
@@ -144,6 +149,7 @@ export const TemSpeciesQuiz: FC = () => {
                   className=" h-fit w-fit rounded-full p-1.5"
                 >
                   <Image
+                    loader={imageLoader}
                     src={temTypeImage(type)}
                     alt={type}
                     height={50}

@@ -6,6 +6,7 @@ const nextConfig = {
     typedRoutes: true,
   },
   images: {
+    loader: 'custom',
     remotePatterns: [
       {
         protocol: 'https',
