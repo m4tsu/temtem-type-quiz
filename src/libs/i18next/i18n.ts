@@ -1,4 +1,5 @@
 'use client'
+
 import i18n from 'i18next'
 import { useCallback } from 'react'
 import {
@@ -32,6 +33,7 @@ export const initialize = () => {
     defaultNS,
     resources,
   })
+  return i18n
 }
 
 export const useTranslation = (...args: Parameters<typeof useTranslation_>) => {
