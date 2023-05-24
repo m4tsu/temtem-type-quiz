@@ -1,27 +1,25 @@
-import { FC } from "react";
-import { useTemSpeciesQuiz } from "./useTemSpeciesQuiz";
-import {
-  Box,
-  Button,
-  Card,
-  Center,
-  Divider,
-  Flex,
-  Grid,
-  Image,
-  SimpleGrid,
-  Text,
-} from "@mantine/core";
-import { Species, getName } from "../../models/species";
-import { TemTypes, temTypeImage } from "../../models/tem-type";
-import { isValidGuess, useSpeciesTypesGuess } from "./useSpeciesTypesGuess";
-import { useLanguage } from "@/libs/i18next/i18n";
+'use client'
+
+import clsx from 'clsx'
+import Image from 'next/image'
+
+import { Button } from '@/components/ui/Button'
+import { useLanguage } from '@/libs/i18next/i18n'
+import { imageLoader } from '@/libs/nextjs/imageLoader'
+import type { Species } from '@/models/species'
+import { getName } from '@/models/species'
+import { TemTypes, temTypeImage } from '@/models/tem-type'
+
+import { isValidGuess, useSpeciesTypesGuess } from './useSpeciesTypesGuess'
+import { useTemSpeciesQuiz } from './useTemSpeciesQuiz'
+
+import type { FC } from 'react'
 
 const iconImage = (species: Species) =>
-  `https://temtem-api.mael.tech${species.icon}`;
+  `https://temtem-api.mael.tech${species.icon}`
 
 export const TemSpeciesQuiz: FC = () => {
-  const { language } = useLanguage();
+  const { language } = useLanguage()
   const {
     round,
     problems,
@@ -31,206 +29,155 @@ export const TemSpeciesQuiz: FC = () => {
     answerCurrentProblem,
     reset,
     regenerateProblems,
-  } = useTemSpeciesQuiz();
+  } = useTemSpeciesQuiz()
 
   const { selectedTypes, toggleType, resetSelectedTypes } =
-    useSpeciesTypesGuess();
+    useSpeciesTypesGuess()
 
   return (
-    <Flex direction="column" gap="lg" justify="center">
-      <Flex
-        sx={{ width: "100%" }}
-        direction="column"
-        gap="md"
-        align="center"
-        justify="center"
-      >
+    <div className="mx-auto flex max-w-xl flex-col justify-center gap-4">
+      <div className="flex w-full flex-col items-center justify-center gap-4">
         {isEnded ? (
-          <Text align="center" size="lg" fw="bold">
+          <div className="text-lg font-bold">
             正解: {correctCount}/{problems.length}
-          </Text>
+          </div>
         ) : (
           <>
-            <Text align="center" size="lg" fw="bold">
+            <div className="text-lg font-bold">
               {round}問目 ({`${problems.length}問中`})
-            </Text>
+            </div>
             {/* 種族名表示するか選べるようにする？ */}
             {/* <Flex direction="column" gap="4px" justify="center"> */}
-            <Card p="0" withBorder>
+            <div className="rounded-md border border-solid border-zinc-700">
               <Image
+                loader={imageLoader}
                 src={iconImage(currentProblem.species)}
                 alt={currentProblem.species.name}
+                height={80}
                 width={80}
               />
-            </Card>
+            </div>
             {/* <Text align="center" size="md" fw="bold">
                 {getName(currentProblem.species, language)}
               </Text> */}
             {/* </Flex> */}
           </>
         )}
-      </Flex>
-      <Divider />
+      </div>
+      <hr className=" border-t-zinc-700" />
       {isEnded ? (
-        <Flex direction="column" gap="md">
-          <Grid grow>
-            <Grid.Col span={6}>
-              <Button onClick={reset} sx={{ width: "100%" }}>
-                もう一度
-              </Button>
-            </Grid.Col>
-            <Grid.Col span={6}>
-              <Button onClick={regenerateProblems} sx={{ width: "100%" }}>
-                別の問題
-              </Button>
-            </Grid.Col>
-          </Grid>
-          <SimpleGrid
-            sx={{
-              display: "grid",
-              gap: "8px",
-              gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
-            }}
-          >
+        <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-2 gap-2">
+            <Button onPress={reset} className="w-full" slot="aaaaaaa">
+              もう一度
+            </Button>
+            <Button onPress={regenerateProblems} className="w-full">
+              別の問題
+            </Button>
+          </div>
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-2">
             {problems.map((problem, i) => (
-              <Flex
+              <div
                 key={i}
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                }}
+                className={clsx(
+                  'flex w-full flex-col items-center justify-center gap-2 rounded-md p-2',
+                  problem.status === 'correct' ? 'bg-green-500' : 'bg-red-500'
+                )}
               >
-                <Card
-                  bg={problem.status === "correct" ? "green.6" : "red.6"}
-                  p="xs"
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    gap: "4px",
-                    alignItems: "center",
-                  }}
-                >
-                  <Flex align="center" gap="xs">
-                    <Image
-                      src={iconImage(problem.species)}
-                      alt={getName(problem.species, language)}
-                      width={50}
-                      bg="dark.6"
-                    />
-                    <Flex justify="center">
-                      {problem.species.types.map((type) => (
-                        <Image
-                          key={type}
-                          src={temTypeImage(type)}
-                          alt={type}
-                          width={30}
-                        />
-                      ))}
-                    </Flex>
-                  </Flex>
-                  <Box>
-                    <Text
-                      align="center"
-                      fw="bold"
-                      color="gray.1"
-                      sx={{ lineHeight: "1.2" }}
-                    >
-                      {getName(problem.species, "ja")}
-                    </Text>
-                    <Text
-                      align="center"
-                      fw="bold"
-                      color="gray.1"
-                      sx={{ lineHeight: "1.2" }}
-                    >
-                      {getName(problem.species, "en")}
-                    </Text>
-                  </Box>
-                </Card>
-              </Flex>
+                <div className="flex items-center gap-4">
+                  <Image
+                    loader={imageLoader}
+                    className=" rounded-sm bg-zinc-800"
+                    src={iconImage(problem.species)}
+                    alt={getName(problem.species, language)}
+                    height={50}
+                    width={50}
+                  />
+                  <div className="flex justify-center">
+                    {problem.species.types.map((type) => (
+                      <Image
+                        loader={imageLoader}
+                        key={type}
+                        src={temTypeImage(type)}
+                        alt={type}
+                        height={30}
+                        width={30}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <div className="text-md text-center font-bold text-zinc-100">
+                  <div>{getName(problem.species, 'ja')}</div>
+                  <div>{getName(problem.species, 'en')}</div>
+                </div>
+              </div>
             ))}
-          </SimpleGrid>
-        </Flex>
+          </div>
+        </div>
       ) : (
-        <Flex direction="column" gap="md">
-          <Flex direction="column" justify="center" gap="xs">
-            <Text size="lg" fw="bold" w="100%" align="center">
-              選択中
-            </Text>
-            <Flex justify="center" gap="xs">
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col justify-center gap-4">
+            <div className="text-center text-xl font-bold">選択中</div>
+            <div className="flex justify-center gap-1 text-center text-xl font-bold">
               {[0, 1].map((i) => (
-                <Card
+                <div
                   key={i}
-                  p="xs"
-                  withBorder
-                  sx={{
-                    width: 60,
-                    height: 60,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
+                  className="flex h-[60px] w-[60px] items-center justify-center rounded-md border border-zinc-800"
                 >
                   {selectedTypes[i] ? (
-                    <Image src={temTypeImage(selectedTypes[i])} width={40} />
+                    <Image
+                      loader={imageLoader}
+                      src={temTypeImage(selectedTypes[i])}
+                      alt={selectedTypes[i]}
+                      height={40}
+                      width={40}
+                    />
                   ) : (
-                    <Text size="xl" fw="bold" w="40px" h="40px" align="center">
-                      *
-                    </Text>
+                    <div>*</div>
                   )}
-                </Card>
+                </div>
               ))}
-            </Flex>
-          </Flex>
-          <SimpleGrid
-            sx={{
-              width: "80%",
-              margin: "0 auto",
-              display: "grid",
-              gap: "8px",
-              gridTemplateColumns: "repeat(auto-fill, minmax(60px, 20%))",
-              justifyContent: "center",
-            }}
-          >
+            </div>
+          </div>
+          <div className="mx-auto grid w-8/12 grid-cols-[repeat(auto-fill,minmax(60px,20%))] justify-center gap-4">
             {TemTypes.map((type) => (
-              <Flex key={type} justify="center">
+              <div className="flex justify-center" key={type}>
                 <Button
                   variant="outline"
-                  color="gray"
-                  h="unset"
-                  p="4px"
-                  radius="xl"
-                  onClick={() => toggleType(type)}
+                  onPress={() => toggleType(type)}
                   aria-label={type}
+                  className=" h-fit w-fit rounded-full p-1.5"
                 >
-                  <Image src={temTypeImage(type)} alt={type} width={50} />
+                  <Image
+                    loader={imageLoader}
+                    src={temTypeImage(type)}
+                    alt={type}
+                    height={50}
+                    width={50}
+                  />
                 </Button>
-              </Flex>
+              </div>
             ))}
-          </SimpleGrid>
-          <Center
-            sx={{ width: "70%", justifyContent: "center", margin: "0 auto" }}
-          >
+          </div>
+          <div className="mx-auto flex w-8/12 justify-center">
             {isValidGuess(selectedTypes) ? (
               <Button
-                fullWidth
-                onClick={() => {
-                  answerCurrentProblem(selectedTypes);
-                  resetSelectedTypes();
+                onPress={() => {
+                  answerCurrentProblem(selectedTypes)
+                  resetSelectedTypes()
                 }}
+                className="w-full"
               >
                 決定
               </Button>
             ) : (
-              <Button fullWidth disabled>
+              <Button isDisabled className="w-full">
                 決定
               </Button>
             )}
-          </Center>
-        </Flex>
+          </div>
+        </div>
       )}
-    </Flex>
-  );
-};
+    </div>
+  )
+}

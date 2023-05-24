@@ -1,1 +1,566 @@
-[{"number":1,"name":"Mimit","types":["Digital"],"icon":"/images/portraits/temtem/large/Mimit.png"},{"number":3,"name":"Zaobian","types":["Digital"],"icon":"/images/portraits/temtem/large/Zaobian.png"},{"number":4,"name":"Chromeon (Digital)","types":["Digital"],"icon":"/images/portraits/temtem/large/Chromeon.png"},{"number":6,"name":"Molgu","types":["Digital"],"icon":"/images/portraits/temtem/large/Molgu.png"},{"number":9,"name":"Platimous","types":["Water","Toxic"],"icon":"/images/portraits/temtem/large/Platimous.png"},{"number":11,"name":"Loali","types":["Nature","Wind"],"icon":"/images/portraits/temtem/large/Loali.png"},{"number":12,"name":"Tateru","types":["Neutral"],"icon":"/images/portraits/temtem/large/Tateru.png"},{"number":13,"name":"Gharunder","types":["Toxic","Electric"],"icon":"/images/portraits/temtem/large/Gharunder.png"},{"number":15,"name":"Magmut","types":["Melee","Fire"],"icon":"/images/portraits/temtem/large/Magmut.png"},{"number":18,"name":"Granpah","types":["Wind"],"icon":"/images/portraits/temtem/large/Granpah.png"},{"number":20,"name":"Amphatyr","types":["Electric","Nature"],"icon":"/images/portraits/temtem/large/Amphatyr.png"},{"number":22,"name":"Mudrid","types":["Earth","Crystal"],"icon":"/images/portraits/temtem/large/Mudrid.png"},{"number":24,"name":"Taifu","types":["Nature"],"icon":"/images/portraits/temtem/large/Taifu.png"},{"number":26,"name":"Wiplump","types":["Water","Wind"],"icon":"/images/portraits/temtem/large/Wiplump.png"},{"number":28,"name":"Skunch","types":["Neutral","Melee"],"icon":"/images/portraits/temtem/large/Skunch.png"},{"number":30,"name":"Mouflank","types":["Neutral"],"icon":"/images/portraits/temtem/large/Mouflank.png"},{"number":31,"name":"Rhoulder","types":["Neutral","Earth"],"icon":"/images/portraits/temtem/large/Rhoulder.png"},{"number":34,"name":"Nagaise","types":["Mental","Water"],"icon":"/images/portraits/temtem/large/Nagaise.png"},{"number":36,"name":"Nidrasil","types":["Nature","Toxic"],"icon":"/images/portraits/temtem/large/Nidrasil.png"},{"number":38,"name":"Capyre","types":["Fire"],"icon":"/images/portraits/temtem/large/Capyre.png"},{"number":41,"name":"Zenoreth","types":["Crystal"],"icon":"/images/portraits/temtem/large/Zenoreth.png"},{"number":43,"name":"Aohi","types":["Mental","Fire"],"icon":"/images/portraits/temtem/large/Aohi.png"},{"number":45,"name":"Babawa","types":["Nature","Water"],"icon":"/images/portraits/temtem/large/Babawa.png"},{"number":47,"name":"0b10","types":["Digital","Electric"],"icon":"/images/portraits/temtem/large/0b10.png"},{"number":49,"name":"Saku","types":["Nature","Wind"],"icon":"/images/portraits/temtem/large/Saku.png"},{"number":50,"name":"Valash","types":["Neutral","Crystal"],"icon":"/images/portraits/temtem/large/Valash.png"},{"number":52,"name":"Owlhe","types":["Wind","Melee"],"icon":"/images/portraits/temtem/large/Owlhe.png"},{"number":53,"name":"Barnshe","types":["Wind","Mental"],"icon":"/images/portraits/temtem/large/Barnshe.png"},{"number":54,"name":"Gyalis","types":["Crystal","Melee"],"icon":"/images/portraits/temtem/large/Gyalis.png"},{"number":56,"name":"Myx","types":["Crystal","Mental"],"icon":"/images/portraits/temtem/large/Myx.png"},{"number":59,"name":"Raican","types":["Fire"],"icon":"/images/portraits/temtem/large/Raican.png"},{"number":61,"name":"Piraniant","types":["Water"],"icon":"/images/portraits/temtem/large/Piraniant.png"},{"number":63,"name":"Scaravolt","types":["Electric","Fire"],"icon":"/images/portraits/temtem/large/Scaravolt.png"},{"number":65,"name":"Hedgine","types":["Digital","Fire"],"icon":"/images/portraits/temtem/large/Hedgine.png"},{"number":68,"name":"Osukai","types":["Earth","Melee"],"icon":"/images/portraits/temtem/large/Osukai.png"},{"number":69,"name":"Saipat","types":["Water","Melee"],"icon":"/images/portraits/temtem/large/Saipat.png"},{"number":71,"name":"Drakash","types":["Earth","Fire"],"icon":"/images/portraits/temtem/large/Drakash.png"},{"number":74,"name":"Tortenite","types":["Crystal","Toxic"],"icon":"/images/portraits/temtem/large/Tortenite.png"},{"number":75,"name":"Innki","types":["Electric","Crystal"],"icon":"/images/portraits/temtem/large/Innki.png"},{"number":77,"name":"Shaolant","types":["Melee"],"icon":"/images/portraits/temtem/large/Shaolant.png"},{"number":78,"name":"Cycrox","types":["Digital","Toxic"],"icon":"/images/portraits/temtem/large/Cycrox.png"},{"number":80,"name":"Pocus","types":["Mental"],"icon":"/images/portraits/temtem/large/Pocus.png"},{"number":83,"name":"Golzy","types":["Electric","Melee"],"icon":"/images/portraits/temtem/large/Golzy.png"},{"number":85,"name":"Mushook","types":["Toxic","Melee"],"icon":"/images/portraits/temtem/large/Mushook.png"},{"number":87,"name":"Mastione","types":["Fire","Water"],"icon":"/images/portraits/temtem/large/Mastione.png"},{"number":89,"name":"Ukama","types":["Water"],"icon":"/images/portraits/temtem/large/Ukama.png"},{"number":91,"name":"Raignet","types":["Electric"],"icon":"/images/portraits/temtem/large/Raignet.png"},{"number":94,"name":"Seismunch","types":["Melee","Earth"],"icon":"/images/portraits/temtem/large/Seismunch.png"},{"number":95,"name":"Zizare","types":["Earth"],"icon":"/images/portraits/temtem/large/Zizare.png"},{"number":96,"name":"Gorong","types":["Melee"],"icon":"/images/portraits/temtem/large/Gorong.png"},{"number":98,"name":"Sanbi","types":["Mental"],"icon":"/images/portraits/temtem/large/Sanbi.png"},{"number":99,"name":"Momo","types":["Neutral"],"icon":"/images/portraits/temtem/large/Momo.png"},{"number":101,"name":"Kauren","types":["Earth"],"icon":"/images/portraits/temtem/large/Kauren.png"},{"number":104,"name":"Cerneaf","types":["Nature"],"icon":"/images/portraits/temtem/large/Cerneaf.png"},{"number":106,"name":"Noxolotl","types":["Toxic"],"icon":"/images/portraits/temtem/large/Noxolotl.png"},{"number":108,"name":"Goolder","types":["Toxic"],"icon":"/images/portraits/temtem/large/Goolder.png"},{"number":110,"name":"Volarend","types":["Toxic","Wind"],"icon":"/images/portraits/temtem/large/Volarend.png"},{"number":112,"name":"Grumper","types":["Earth","Electric"],"icon":"/images/portraits/temtem/large/Grumper.png"},{"number":114,"name":"Gazuma","types":["Electric","Wind"],"icon":"/images/portraits/temtem/large/Gazuma.png"},{"number":115,"name":"Oceara","types":["Water"],"icon":"/images/portraits/temtem/large/Oceara.png"},{"number":116,"name":"Yowlar","types":["Neutral"],"icon":"/images/portraits/temtem/large/Yowlar.png"},{"number":118,"name":"Garyo","types":["Water","Earth"],"icon":"/images/portraits/temtem/large/Garyo.png"},{"number":121,"name":"Broccolem","types":["Nature","Melee"],"icon":"/images/portraits/temtem/large/Broccolem.png"},{"number":122,"name":"Shuine","types":["Crystal","Water"],"icon":"/images/portraits/temtem/large/Shuine.png"},{"number":123,"name":"Nessla","types":["Water","Electric"],"icon":"/images/portraits/temtem/large/Nessla.png"},{"number":124,"name":"Valiar","types":["Mental"],"icon":"/images/portraits/temtem/large/Valiar.png"},{"number":126,"name":"Loatle","types":["Digital","Mental"],"icon":"/images/portraits/temtem/large/Loatle.png"},{"number":128,"name":"Kalabyss","types":["Water","Toxic"],"icon":"/images/portraits/temtem/large/Kalabyss.png"},{"number":129,"name":"Adoroboros","types":["Toxic","Mental"],"icon":"/images/portraits/temtem/large/Adoroboros.png"},{"number":131,"name":"Tukai","types":["Wind","Water"],"icon":"/images/portraits/temtem/large/Tukai.png"},{"number":132,"name":"Tulcan","types":["Wind","Fire"],"icon":"/images/portraits/temtem/large/Tulcan.png"},{"number":133,"name":"Tuvine","types":["Wind","Crystal"],"icon":"/images/portraits/temtem/large/Tuvine.png"},{"number":134,"name":"Turoc","types":["Wind","Earth"],"icon":"/images/portraits/temtem/large/Turoc.png"},{"number":135,"name":"Tuwire","types":["Wind","Digital"],"icon":"/images/portraits/temtem/large/Tuwire.png"},{"number":136,"name":"Tutsu","types":["Wind","Melee"],"icon":"/images/portraits/temtem/large/Tutsu.png"},{"number":137,"name":"Kinu","types":["Nature","Mental"],"icon":"/images/portraits/temtem/large/Kinu.png"},{"number":140,"name":"Vulcrane","types":["Fire","Earth"],"icon":"/images/portraits/temtem/large/Vulcrane.png"},{"number":141,"name":"Pigepic","types":["Wind"],"icon":"/images/portraits/temtem/large/Pigepic.png"},{"number":142,"name":"Akranox","types":["Earth","Toxic"],"icon":"/images/portraits/temtem/large/Akranox.png"},{"number":143,"name":"Koish (Water)","types":["Water"],"icon":"/images/portraits/temtem/large/Koish.png"},{"number":144,"name":"Vulffy","types":["Earth","Nature"],"icon":"/images/portraits/temtem/large/Vulffy.png"},{"number":146,"name":"Waspeen","types":["Digital","Crystal"],"icon":"/images/portraits/temtem/large/Waspeen.png"},{"number":148,"name":"Mawmense","types":["Digital","Nature"],"icon":"/images/portraits/temtem/large/Mawmense.png"},{"number":149,"name":"Hazrat","types":["Toxic","Fire"],"icon":"/images/portraits/temtem/large/Hazrat.png"},{"number":152,"name":"Minothor","types":["Mental","Electric"],"icon":"/images/portraits/temtem/large/Minothor.png"},{"number":153,"name":"Maoala","types":["Melee","Mental"],"icon":"/images/portraits/temtem/large/Maoala.png"},{"number":155,"name":"Venmet","types":["Neutral","Melee"],"icon":"/images/portraits/temtem/large/Venmet.png"},{"number":156,"name":"Vental","types":["Neutral","Mental"],"icon":"/images/portraits/temtem/large/Vental.png"},{"number":157,"name":"Chimurian","types":["Nature","Crystal"],"icon":"/images/portraits/temtem/large/Chimurian.png"},{"number":158,"name":"Arachnyte","types":["Neutral","Digital"],"icon":"/images/portraits/temtem/large/Arachnyte.png"},{"number":160,"name":"Monkko","types":["Digital","Melee"],"icon":"/images/portraits/temtem/large/Monkko.png"},{"number":162,"name":"Anatan","types":["Crystal","Fire"],"icon":"/images/portraits/temtem/large/Anatan.png"},{"number":163,"name":"Tyranak","types":["Fire","Nature"],"icon":"/images/portraits/temtem/large/Tyranak.png"},{"number":164,"name":"Volgon","types":["Electric"],"icon":"/images/portraits/temtem/large/Volgon.png"}]
+[
+  {
+    "number": 1,
+    "name": "Mimit",
+    "types": ["Digital"],
+    "icon": "/images/portraits/temtem/large/Mimit.png"
+  },
+  {
+    "number": 3,
+    "name": "Zaobian",
+    "types": ["Digital"],
+    "icon": "/images/portraits/temtem/large/Zaobian.png"
+  },
+  {
+    "number": 4,
+    "name": "Chromeon (Digital)",
+    "types": ["Digital"],
+    "icon": "/images/portraits/temtem/large/Chromeon.png"
+  },
+  {
+    "number": 6,
+    "name": "Molgu",
+    "types": ["Digital"],
+    "icon": "/images/portraits/temtem/large/Molgu.png"
+  },
+  {
+    "number": 9,
+    "name": "Platimous",
+    "types": ["Water", "Toxic"],
+    "icon": "/images/portraits/temtem/large/Platimous.png"
+  },
+  {
+    "number": 11,
+    "name": "Loali",
+    "types": ["Nature", "Wind"],
+    "icon": "/images/portraits/temtem/large/Loali.png"
+  },
+  {
+    "number": 12,
+    "name": "Tateru",
+    "types": ["Neutral"],
+    "icon": "/images/portraits/temtem/large/Tateru.png"
+  },
+  {
+    "number": 13,
+    "name": "Gharunder",
+    "types": ["Toxic", "Electric"],
+    "icon": "/images/portraits/temtem/large/Gharunder.png"
+  },
+  {
+    "number": 15,
+    "name": "Magmut",
+    "types": ["Melee", "Fire"],
+    "icon": "/images/portraits/temtem/large/Magmut.png"
+  },
+  {
+    "number": 18,
+    "name": "Granpah",
+    "types": ["Wind"],
+    "icon": "/images/portraits/temtem/large/Granpah.png"
+  },
+  {
+    "number": 20,
+    "name": "Amphatyr",
+    "types": ["Electric", "Nature"],
+    "icon": "/images/portraits/temtem/large/Amphatyr.png"
+  },
+  {
+    "number": 22,
+    "name": "Mudrid",
+    "types": ["Earth", "Crystal"],
+    "icon": "/images/portraits/temtem/large/Mudrid.png"
+  },
+  {
+    "number": 24,
+    "name": "Taifu",
+    "types": ["Nature"],
+    "icon": "/images/portraits/temtem/large/Taifu.png"
+  },
+  {
+    "number": 26,
+    "name": "Wiplump",
+    "types": ["Water", "Wind"],
+    "icon": "/images/portraits/temtem/large/Wiplump.png"
+  },
+  {
+    "number": 28,
+    "name": "Skunch",
+    "types": ["Neutral", "Melee"],
+    "icon": "/images/portraits/temtem/large/Skunch.png"
+  },
+  {
+    "number": 30,
+    "name": "Mouflank",
+    "types": ["Neutral"],
+    "icon": "/images/portraits/temtem/large/Mouflank.png"
+  },
+  {
+    "number": 31,
+    "name": "Rhoulder",
+    "types": ["Neutral", "Earth"],
+    "icon": "/images/portraits/temtem/large/Rhoulder.png"
+  },
+  {
+    "number": 34,
+    "name": "Nagaise",
+    "types": ["Mental", "Water"],
+    "icon": "/images/portraits/temtem/large/Nagaise.png"
+  },
+  {
+    "number": 36,
+    "name": "Nidrasil",
+    "types": ["Nature", "Toxic"],
+    "icon": "/images/portraits/temtem/large/Nidrasil.png"
+  },
+  {
+    "number": 38,
+    "name": "Capyre",
+    "types": ["Fire"],
+    "icon": "/images/portraits/temtem/large/Capyre.png"
+  },
+  {
+    "number": 41,
+    "name": "Zenoreth",
+    "types": ["Crystal"],
+    "icon": "/images/portraits/temtem/large/Zenoreth.png"
+  },
+  {
+    "number": 43,
+    "name": "Aohi",
+    "types": ["Mental", "Fire"],
+    "icon": "/images/portraits/temtem/large/Aohi.png"
+  },
+  {
+    "number": 45,
+    "name": "Babawa",
+    "types": ["Nature", "Water"],
+    "icon": "/images/portraits/temtem/large/Babawa.png"
+  },
+  {
+    "number": 47,
+    "name": "0b10",
+    "types": ["Digital", "Electric"],
+    "icon": "/images/portraits/temtem/large/0b10.png"
+  },
+  {
+    "number": 49,
+    "name": "Saku",
+    "types": ["Nature", "Wind"],
+    "icon": "/images/portraits/temtem/large/Saku.png"
+  },
+  {
+    "number": 50,
+    "name": "Valash",
+    "types": ["Neutral", "Crystal"],
+    "icon": "/images/portraits/temtem/large/Valash.png"
+  },
+  {
+    "number": 52,
+    "name": "Owlhe",
+    "types": ["Wind", "Melee"],
+    "icon": "/images/portraits/temtem/large/Owlhe.png"
+  },
+  {
+    "number": 53,
+    "name": "Barnshe",
+    "types": ["Wind", "Mental"],
+    "icon": "/images/portraits/temtem/large/Barnshe.png"
+  },
+  {
+    "number": 54,
+    "name": "Gyalis",
+    "types": ["Crystal", "Melee"],
+    "icon": "/images/portraits/temtem/large/Gyalis.png"
+  },
+  {
+    "number": 56,
+    "name": "Myx",
+    "types": ["Crystal", "Mental"],
+    "icon": "/images/portraits/temtem/large/Myx.png"
+  },
+  {
+    "number": 59,
+    "name": "Raican",
+    "types": ["Fire"],
+    "icon": "/images/portraits/temtem/large/Raican.png"
+  },
+  {
+    "number": 61,
+    "name": "Piraniant",
+    "types": ["Water"],
+    "icon": "/images/portraits/temtem/large/Piraniant.png"
+  },
+  {
+    "number": 63,
+    "name": "Scaravolt",
+    "types": ["Electric", "Fire"],
+    "icon": "/images/portraits/temtem/large/Scaravolt.png"
+  },
+  {
+    "number": 65,
+    "name": "Hedgine",
+    "types": ["Digital", "Fire"],
+    "icon": "/images/portraits/temtem/large/Hedgine.png"
+  },
+  {
+    "number": 68,
+    "name": "Osukai",
+    "types": ["Earth", "Melee"],
+    "icon": "/images/portraits/temtem/large/Osukai.png"
+  },
+  {
+    "number": 69,
+    "name": "Saipat",
+    "types": ["Water", "Melee"],
+    "icon": "/images/portraits/temtem/large/Saipat.png"
+  },
+  {
+    "number": 71,
+    "name": "Drakash",
+    "types": ["Earth", "Fire"],
+    "icon": "/images/portraits/temtem/large/Drakash.png"
+  },
+  {
+    "number": 74,
+    "name": "Tortenite",
+    "types": ["Crystal", "Toxic"],
+    "icon": "/images/portraits/temtem/large/Tortenite.png"
+  },
+  {
+    "number": 75,
+    "name": "Innki",
+    "types": ["Electric", "Crystal"],
+    "icon": "/images/portraits/temtem/large/Innki.png"
+  },
+  {
+    "number": 77,
+    "name": "Shaolant",
+    "types": ["Melee"],
+    "icon": "/images/portraits/temtem/large/Shaolant.png"
+  },
+  {
+    "number": 78,
+    "name": "Cycrox",
+    "types": ["Digital", "Toxic"],
+    "icon": "/images/portraits/temtem/large/Cycrox.png"
+  },
+  {
+    "number": 80,
+    "name": "Pocus",
+    "types": ["Mental"],
+    "icon": "/images/portraits/temtem/large/Pocus.png"
+  },
+  {
+    "number": 83,
+    "name": "Golzy",
+    "types": ["Electric", "Melee"],
+    "icon": "/images/portraits/temtem/large/Golzy.png"
+  },
+  {
+    "number": 85,
+    "name": "Mushook",
+    "types": ["Toxic", "Melee"],
+    "icon": "/images/portraits/temtem/large/Mushook.png"
+  },
+  {
+    "number": 87,
+    "name": "Mastione",
+    "types": ["Fire", "Water"],
+    "icon": "/images/portraits/temtem/large/Mastione.png"
+  },
+  {
+    "number": 89,
+    "name": "Ukama",
+    "types": ["Water"],
+    "icon": "/images/portraits/temtem/large/Ukama.png"
+  },
+  {
+    "number": 91,
+    "name": "Raignet",
+    "types": ["Electric"],
+    "icon": "/images/portraits/temtem/large/Raignet.png"
+  },
+  {
+    "number": 94,
+    "name": "Seismunch",
+    "types": ["Melee", "Earth"],
+    "icon": "/images/portraits/temtem/large/Seismunch.png"
+  },
+  {
+    "number": 95,
+    "name": "Zizare",
+    "types": ["Earth"],
+    "icon": "/images/portraits/temtem/large/Zizare.png"
+  },
+  {
+    "number": 96,
+    "name": "Gorong",
+    "types": ["Melee"],
+    "icon": "/images/portraits/temtem/large/Gorong.png"
+  },
+  {
+    "number": 98,
+    "name": "Sanbi",
+    "types": ["Mental"],
+    "icon": "/images/portraits/temtem/large/Sanbi.png"
+  },
+  {
+    "number": 99,
+    "name": "Momo",
+    "types": ["Neutral"],
+    "icon": "/images/portraits/temtem/large/Momo.png"
+  },
+  {
+    "number": 101,
+    "name": "Kauren",
+    "types": ["Earth"],
+    "icon": "/images/portraits/temtem/large/Kauren.png"
+  },
+  {
+    "number": 104,
+    "name": "Cerneaf",
+    "types": ["Nature"],
+    "icon": "/images/portraits/temtem/large/Cerneaf.png"
+  },
+  {
+    "number": 106,
+    "name": "Noxolotl",
+    "types": ["Toxic"],
+    "icon": "/images/portraits/temtem/large/Noxolotl.png"
+  },
+  {
+    "number": 108,
+    "name": "Goolder",
+    "types": ["Toxic"],
+    "icon": "/images/portraits/temtem/large/Goolder.png"
+  },
+  {
+    "number": 110,
+    "name": "Volarend",
+    "types": ["Toxic", "Wind"],
+    "icon": "/images/portraits/temtem/large/Volarend.png"
+  },
+  {
+    "number": 112,
+    "name": "Grumper",
+    "types": ["Earth", "Electric"],
+    "icon": "/images/portraits/temtem/large/Grumper.png"
+  },
+  {
+    "number": 114,
+    "name": "Gazuma",
+    "types": ["Electric", "Wind"],
+    "icon": "/images/portraits/temtem/large/Gazuma.png"
+  },
+  {
+    "number": 115,
+    "name": "Oceara",
+    "types": ["Water"],
+    "icon": "/images/portraits/temtem/large/Oceara.png"
+  },
+  {
+    "number": 116,
+    "name": "Yowlar",
+    "types": ["Neutral"],
+    "icon": "/images/portraits/temtem/large/Yowlar.png"
+  },
+  {
+    "number": 118,
+    "name": "Garyo",
+    "types": ["Water", "Earth"],
+    "icon": "/images/portraits/temtem/large/Garyo.png"
+  },
+  {
+    "number": 121,
+    "name": "Broccolem",
+    "types": ["Nature", "Melee"],
+    "icon": "/images/portraits/temtem/large/Broccolem.png"
+  },
+  {
+    "number": 122,
+    "name": "Shuine",
+    "types": ["Crystal", "Water"],
+    "icon": "/images/portraits/temtem/large/Shuine.png"
+  },
+  {
+    "number": 123,
+    "name": "Nessla",
+    "types": ["Water", "Electric"],
+    "icon": "/images/portraits/temtem/large/Nessla.png"
+  },
+  {
+    "number": 124,
+    "name": "Valiar",
+    "types": ["Mental"],
+    "icon": "/images/portraits/temtem/large/Valiar.png"
+  },
+  {
+    "number": 126,
+    "name": "Loatle",
+    "types": ["Digital", "Mental"],
+    "icon": "/images/portraits/temtem/large/Loatle.png"
+  },
+  {
+    "number": 128,
+    "name": "Kalabyss",
+    "types": ["Water", "Toxic"],
+    "icon": "/images/portraits/temtem/large/Kalabyss.png"
+  },
+  {
+    "number": 129,
+    "name": "Adoroboros",
+    "types": ["Toxic", "Mental"],
+    "icon": "/images/portraits/temtem/large/Adoroboros.png"
+  },
+  {
+    "number": 131,
+    "name": "Tukai",
+    "types": ["Wind", "Water"],
+    "icon": "/images/portraits/temtem/large/Tukai.png"
+  },
+  {
+    "number": 132,
+    "name": "Tulcan",
+    "types": ["Wind", "Fire"],
+    "icon": "/images/portraits/temtem/large/Tulcan.png"
+  },
+  {
+    "number": 133,
+    "name": "Tuvine",
+    "types": ["Wind", "Crystal"],
+    "icon": "/images/portraits/temtem/large/Tuvine.png"
+  },
+  {
+    "number": 134,
+    "name": "Turoc",
+    "types": ["Wind", "Earth"],
+    "icon": "/images/portraits/temtem/large/Turoc.png"
+  },
+  {
+    "number": 135,
+    "name": "Tuwire",
+    "types": ["Wind", "Digital"],
+    "icon": "/images/portraits/temtem/large/Tuwire.png"
+  },
+  {
+    "number": 136,
+    "name": "Tutsu",
+    "types": ["Wind", "Melee"],
+    "icon": "/images/portraits/temtem/large/Tutsu.png"
+  },
+  {
+    "number": 137,
+    "name": "Kinu",
+    "types": ["Nature", "Mental"],
+    "icon": "/images/portraits/temtem/large/Kinu.png"
+  },
+  {
+    "number": 140,
+    "name": "Vulcrane",
+    "types": ["Fire", "Earth"],
+    "icon": "/images/portraits/temtem/large/Vulcrane.png"
+  },
+  {
+    "number": 141,
+    "name": "Pigepic",
+    "types": ["Wind"],
+    "icon": "/images/portraits/temtem/large/Pigepic.png"
+  },
+  {
+    "number": 142,
+    "name": "Akranox",
+    "types": ["Earth", "Toxic"],
+    "icon": "/images/portraits/temtem/large/Akranox.png"
+  },
+  {
+    "number": 143,
+    "name": "Koish (Water)",
+    "types": ["Water"],
+    "icon": "/images/portraits/temtem/large/Koish.png"
+  },
+  {
+    "number": 144,
+    "name": "Vulffy",
+    "types": ["Earth", "Nature"],
+    "icon": "/images/portraits/temtem/large/Vulffy.png"
+  },
+  {
+    "number": 146,
+    "name": "Waspeen",
+    "types": ["Digital", "Crystal"],
+    "icon": "/images/portraits/temtem/large/Waspeen.png"
+  },
+  {
+    "number": 148,
+    "name": "Mawmense",
+    "types": ["Digital", "Nature"],
+    "icon": "/images/portraits/temtem/large/Mawmense.png"
+  },
+  {
+    "number": 149,
+    "name": "Hazrat",
+    "types": ["Toxic", "Fire"],
+    "icon": "/images/portraits/temtem/large/Hazrat.png"
+  },
+  {
+    "number": 152,
+    "name": "Minothor",
+    "types": ["Mental", "Electric"],
+    "icon": "/images/portraits/temtem/large/Minothor.png"
+  },
+  {
+    "number": 153,
+    "name": "Maoala",
+    "types": ["Melee", "Mental"],
+    "icon": "/images/portraits/temtem/large/Maoala.png"
+  },
+  {
+    "number": 155,
+    "name": "Venmet",
+    "types": ["Neutral", "Melee"],
+    "icon": "/images/portraits/temtem/large/Venmet.png"
+  },
+  {
+    "number": 156,
+    "name": "Vental",
+    "types": ["Neutral", "Mental"],
+    "icon": "/images/portraits/temtem/large/Vental.png"
+  },
+  {
+    "number": 157,
+    "name": "Chimurian",
+    "types": ["Nature", "Crystal"],
+    "icon": "/images/portraits/temtem/large/Chimurian.png"
+  },
+  {
+    "number": 158,
+    "name": "Arachnyte",
+    "types": ["Neutral", "Digital"],
+    "icon": "/images/portraits/temtem/large/Arachnyte.png"
+  },
+  {
+    "number": 160,
+    "name": "Monkko",
+    "types": ["Digital", "Melee"],
+    "icon": "/images/portraits/temtem/large/Monkko.png"
+  },
+  {
+    "number": 162,
+    "name": "Anatan",
+    "types": ["Crystal", "Fire"],
+    "icon": "/images/portraits/temtem/large/Anatan.png"
+  },
+  {
+    "number": 163,
+    "name": "Tyranak",
+    "types": ["Fire", "Nature"],
+    "icon": "/images/portraits/temtem/large/Tyranak.png"
+  },
+  {
+    "number": 164,
+    "name": "Volgon",
+    "types": ["Electric"],
+    "icon": "/images/portraits/temtem/large/Volgon.png"
+  }
+]

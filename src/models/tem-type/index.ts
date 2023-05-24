@@ -1,27 +1,27 @@
 export const TemTypes = [
-  "Neutral",
-  "Wind",
-  "Earth",
-  "Water",
-  "Fire",
-  "Nature",
-  "Electric",
-  "Mental",
-  "Digital",
-  "Melee",
-  "Crystal",
-  "Toxic",
-] as const;
+  'Neutral',
+  'Wind',
+  'Earth',
+  'Water',
+  'Fire',
+  'Nature',
+  'Electric',
+  'Mental',
+  'Digital',
+  'Melee',
+  'Crystal',
+  'Toxic',
+] as const
 
-export type TemType = (typeof TemTypes)[number];
+export type TemType = (typeof TemTypes)[number]
 
-export type TemTypeEffectiveNess = 0.5 | 1 | 2;
-export type TemTypeEffectivenessAgainstMultiple = 0.25 | 0.5 | 1 | 2 | 4;
+export type TemTypeEffectiveNess = 0.5 | 1 | 2
+export type TemTypeEffectivenessAgainstMultiple = 0.25 | 0.5 | 1 | 2 | 4
 
 export const TemTypeCompatibilitiesMap: {
   [attack in TemType]: {
-    [defense in TemType]?: 0.5 | 2; // 0.5 = ineffective, 2 = effective
-  };
+    [defense in TemType]?: 0.5 | 2 // 0.5 = ineffective, 2 = effective
+  }
 } = {
   Neutral: {
     Mental: 0.5,
@@ -101,29 +101,29 @@ export const TemTypeCompatibilitiesMap: {
     Crystal: 0.5,
     Toxic: 0.5,
   },
-};
+}
 
 const calculateEffectivenessAgainstSingleType = (
   attack: TemType,
   defense: TemType
 ): TemTypeEffectiveNess => {
-  const effectiveness = TemTypeCompatibilitiesMap[attack][defense];
+  const effectiveness = TemTypeCompatibilitiesMap[attack][defense]
   if (effectiveness === undefined) {
-    return 1;
+    return 1
   }
-  return effectiveness;
-};
+  return effectiveness
+}
 
 export const calculateEffectiveness = (
   attack: TemType,
   defense: readonly [TemType] | readonly [TemType, TemType]
 ): TemTypeEffectivenessAgainstMultiple => {
-  const ef1 = calculateEffectivenessAgainstSingleType(attack, defense[0]);
+  const ef1 = calculateEffectivenessAgainstSingleType(attack, defense[0])
   if (defense.length === 1) {
-    return ef1;
+    return ef1
   }
-  const ef2 = calculateEffectivenessAgainstSingleType(attack, defense[1]);
-  return (ef1 * ef2) as TemTypeEffectivenessAgainstMultiple;
-};
+  const ef2 = calculateEffectivenessAgainstSingleType(attack, defense[1])
+  return (ef1 * ef2) as TemTypeEffectivenessAgainstMultiple
+}
 
-export const temTypeImage = (type: TemType) => `/images/types/${type}.png`;
+export const temTypeImage = (type: TemType) => `/images/types/${type}.png`

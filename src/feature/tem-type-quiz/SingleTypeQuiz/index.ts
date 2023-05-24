@@ -1,1 +1,1 @@
-export { SingleTypeQuiz } from "./SingleTypeQuiz";
+export { SingleTypeQuiz } from './SingleTypeQuiz'

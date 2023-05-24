@@ -1,21 +1,15 @@
-import {
-  Button,
-  Card,
-  Divider,
-  Flex,
-  Grid,
-  Image,
-  SimpleGrid,
-  Text,
-} from "@mantine/core";
-import { useSingleTypeQuiz } from "./useSingleQuiz";
-import {
-  TemTypeEffectiveNess,
-  calculateEffectiveness,
-  temTypeImage,
-} from "../../../models/tem-type";
+'use client'
+import clsx from 'clsx'
+import Image from 'next/image'
 
-const EffectivenessList = [0.5, 1, 2] satisfies TemTypeEffectiveNess[];
+import { Button } from '@/components/ui/Button'
+import { imageLoader } from '@/libs/nextjs/imageLoader'
+import type { TemTypeEffectiveNess } from '@/models/tem-type'
+import { calculateEffectiveness, temTypeImage } from '@/models/tem-type'
+
+import { useSingleTypeQuiz } from './useSingleQuiz'
+
+const EffectivenessList = [0.5, 1, 2] satisfies TemTypeEffectiveNess[]
 
 export const SingleTypeQuiz = () => {
   const {
@@ -27,119 +21,115 @@ export const SingleTypeQuiz = () => {
     answerCurrentProblem,
     reset,
     regenerateProblems,
-  } = useSingleTypeQuiz();
+  } = useSingleTypeQuiz()
 
   return (
-    <Flex direction="column" gap="lg" justify="center">
-      <Flex
-        sx={{ width: "100%" }}
-        direction="column"
-        gap="md"
-        align="center"
-        justify="center"
-      >
+    <div className="mx-auto flex max-w-xl flex-col justify-center gap-4">
+      <div className="flex w-full flex-col items-center justify-center gap-4">
         {isEnded ? (
-          <Text size="lg" fw="bold">
+          <div className="text-lg font-bold">
             正解: {correctCount}/{problems.length}
-          </Text>
+          </div>
         ) : (
           <>
-            <Text size="lg" fw="bold">
+            <div className="text-lg font-bold">
               {round}問目 ({`${problems.length}問中`})
-            </Text>
-            <Flex sx={{ width: "100%" }} align="center" justify="center">
+            </div>
+            <div className="flex w-full items-center justify-center">
               <Image
+                loader={imageLoader}
                 src={temTypeImage(currentProblem.quiz.attack)}
                 alt={currentProblem.quiz.attack}
+                height={60}
                 width={60}
               />
-              <Image src="/arrow-right-solid.svg" width={40} />
               <Image
+                loader={imageLoader}
+                src="/arrow-right-solid.svg"
+                alt="against to"
+                height={40}
+                width={40}
+              />
+              <Image
+                loader={imageLoader}
                 src={temTypeImage(currentProblem.quiz.defense)}
                 alt={currentProblem.quiz.defense}
+                height={60}
                 width={60}
               />
-            </Flex>
+            </div>
           </>
         )}
-      </Flex>
-      <Divider />
-      <Flex direction="column" gap="lg">
+      </div>
+      <hr className=" border-t-zinc-700" />
+      <div className="flex flex-col gap-6">
         {isEnded ? (
-          <Flex direction="column" gap="md">
-            <Grid grow>
-              <Grid.Col span={6}>
-                <Button onClick={reset} sx={{ width: "100%" }}>
-                  もう一度
-                </Button>
-              </Grid.Col>
-              <Grid.Col span={6}>
-                <Button onClick={regenerateProblems} sx={{ width: "100%" }}>
-                  別の問題
-                </Button>
-              </Grid.Col>
-            </Grid>
-            <SimpleGrid
-              sx={{
-                display: "grid",
-                gap: "8px",
-                gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
-              }}
-            >
+          <div className="flex flex-col gap-4">
+            <div className="grid grid-cols-2 gap-2">
+              <Button onPress={reset} className="w-full" slot="aaaaaaa">
+                もう一度
+              </Button>
+              <Button onPress={regenerateProblems} className="w-full">
+                別の問題
+              </Button>
+            </div>
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-2">
               {problems.map((problem, i) => (
-                <Flex
+                <div
                   key={i}
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                  }}
+                  className={clsx(
+                    'flex w-full flex-col items-center justify-center rounded-md p-2',
+                    problem.status === 'correct' ? 'bg-green-500' : 'bg-red-500'
+                  )}
                 >
-                  <Card bg={problem.status === "correct" ? "green.6" : "red.6"}>
-                    <Flex
-                      sx={{ width: "100%" }}
-                      align="center"
-                      justify="center"
-                    >
-                      <Image
-                        src={temTypeImage(problem.quiz.attack)}
-                        alt={problem.quiz.attack}
-                        width={40}
-                      />
-                      <Image src="/arrow-right-solid.svg" width={25} />
-                      <Image
-                        src={temTypeImage(problem.quiz.defense)}
-                        alt={problem.quiz.defense}
-                        width={40}
-                      />
-                    </Flex>
-                    <Text align="center" size="xl" fw="bold" color="gray.1">
-                      {calculateEffectiveness(problem.quiz.attack, [
-                        problem.quiz.defense,
-                      ])}
-                      x
-                    </Text>
-                  </Card>
-                </Flex>
+                  <div className="flex w-full items-center justify-center">
+                    <Image
+                      loader={imageLoader}
+                      src={temTypeImage(problem.quiz.attack)}
+                      alt={problem.quiz.attack}
+                      height={40}
+                      width={40}
+                    />
+                    <Image
+                      loader={imageLoader}
+                      src="/arrow-right-solid.svg"
+                      alt="against to"
+                      height={25}
+                      width={25}
+                    />
+                    <Image
+                      loader={imageLoader}
+                      src={temTypeImage(problem.quiz.defense)}
+                      alt={problem.quiz.defense}
+                      height={40}
+                      width={40}
+                    />
+                  </div>
+                  <div className="text-center text-xl font-bold">
+                    {calculateEffectiveness(problem.quiz.attack, [
+                      problem.quiz.defense,
+                    ])}
+                    x
+                  </div>
+                </div>
               ))}
-            </SimpleGrid>
-          </Flex>
+            </div>
+          </div>
         ) : (
-          <Card sx={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          <div className="flex flex-col gap-2">
             {EffectivenessList.map((effectiveness) => (
               <Button
                 key={`${effectiveness}`}
-                onClick={() => {
-                  answerCurrentProblem(effectiveness);
+                onPress={() => {
+                  answerCurrentProblem(effectiveness)
                 }}
-                sx={{ fontSize: 18, fontWeight: "bold" }}
               >
                 {effectiveness}x
               </Button>
             ))}
-          </Card>
+          </div>
         )}
-      </Flex>
-    </Flex>
-  );
-};
+      </div>
+    </div>
+  )
+}
