@@ -1,10 +1,24 @@
 'use client'
 import clsx from 'clsx'
 import Image from 'next/image'
-import { useState } from 'react'
+import {
+  ReactElement,
+  ReactNode,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react'
 
-import { Select } from '@/components/ui'
+import { Popover, Select } from '@/components/ui'
 import { Button } from '@/components/ui/Button'
+import type { ItemProps } from '@/components/ui/react-aria'
+import {
+  ComboBox,
+  Input,
+  Item,
+  Label,
+  ListBox,
+} from '@/components/ui/react-aria'
 import { speciesList } from '@/data/species'
 import { useLanguage } from '@/libs/i18next/i18n'
 import { imageLoader } from '@/libs/nextjs/imageLoader'
@@ -31,7 +45,6 @@ const TemTemCell: FC<TemTemCellProps> = ({ species }) => {
         <Image
           height={48}
           width={48}
-          loader={imageLoader}
           src={getIconImageUrl(species)}
           alt={species.name}
         />
@@ -40,7 +53,6 @@ const TemTemCell: FC<TemTemCellProps> = ({ species }) => {
             {species.types.map((type) => (
               <Image
                 key={type}
-                loader={imageLoader}
                 src={temTypeImage(type)}
                 alt={type}
                 height={30}
@@ -55,6 +67,15 @@ const TemTemCell: FC<TemTemCellProps> = ({ species }) => {
       </div>
     </td>
   )
+}
+
+const Item2 = (props: ItemProps) => {
+  const ref = useRef<ItemProps>()
+  useLayoutEffect(() => {
+    ref.current = props
+  }, [props])
+
+  return <Item {...ref.current} />
 }
 
 type EffectivenessCellProps = {
@@ -97,6 +118,7 @@ const speciesOptions = speciesList.map((species) => ({
 const cellClassName = 'border border-zinc-700 p-1'
 
 export const TypeMatchupTable: FC = () => {
+  console.log('TypeMatchupTable')
   const [selectedSpeciesList, setSelectedSpeciesList] = useState<Species[]>([])
   const addSpecies = (speciesNumber: Species['number']) => {
     const species = findSpecies(speciesNumber)
@@ -130,7 +152,6 @@ export const TypeMatchupTable: FC = () => {
               <th className={cellClassName} key={type}>
                 <div className="flex justify-center">
                   <Image
-                    loader={imageLoader}
                     src={temTypeImage(type)}
                     alt={type}
                     height={30}
@@ -186,6 +207,29 @@ export const TypeMatchupTable: FC = () => {
           追加
         </Button>
       </div>
+      <ComboBox>
+        <Label>Favorite Animal</Label>
+        <div>
+          <Input />
+          <Button>▼</Button>
+        </div>
+        <Popover>
+          <ListBox className="w-50 h-50 border border-solid border-gray-300 bg-white">
+            <Item2
+              id="1"
+              value={{ id: '1', label: 'hoge' }}
+              textValue="aaaaaaaaaa"
+            >
+              Aardvark
+            </Item2>
+            <Item2 textValue="bbbbbbbbbb">Cat</Item2>
+            <Item2>Dog</Item2>
+            <Item2>Kangaroo</Item2>
+            <Item2>Panda</Item2>
+            <Item2>Snake</Item2>
+          </ListBox>
+        </Popover>
+      </ComboBox>
     </div>
   )
 }

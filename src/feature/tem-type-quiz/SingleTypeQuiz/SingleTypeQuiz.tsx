@@ -3,7 +3,6 @@ import clsx from 'clsx'
 import Image from 'next/image'
 
 import { Button } from '@/components/ui/Button'
-import { imageLoader } from '@/libs/nextjs/imageLoader'
 import type { TemTypeEffectiveNess } from '@/models/tem-type'
 import { calculateEffectiveness, temTypeImage } from '@/models/tem-type'
 
@@ -37,21 +36,18 @@ export const SingleTypeQuiz = () => {
             </div>
             <div className="flex w-full items-center justify-center">
               <Image
-                loader={imageLoader}
                 src={temTypeImage(currentProblem.quiz.attack)}
                 alt={currentProblem.quiz.attack}
                 height={60}
                 width={60}
               />
               <Image
-                loader={imageLoader}
                 src="/arrow-right-solid.svg"
                 alt="against to"
                 height={40}
                 width={40}
               />
               <Image
-                loader={imageLoader}
                 src={temTypeImage(currentProblem.quiz.defense)}
                 alt={currentProblem.quiz.defense}
                 height={60}
@@ -84,21 +80,18 @@ export const SingleTypeQuiz = () => {
                 >
                   <div className="flex w-full items-center justify-center">
                     <Image
-                      loader={imageLoader}
                       src={temTypeImage(problem.quiz.attack)}
                       alt={problem.quiz.attack}
                       height={40}
                       width={40}
                     />
                     <Image
-                      loader={imageLoader}
                       src="/arrow-right-solid.svg"
                       alt="against to"
                       height={25}
                       width={25}
                     />
                     <Image
-                      loader={imageLoader}
                       src={temTypeImage(problem.quiz.defense)}
                       alt={problem.quiz.defense}
                       height={40}

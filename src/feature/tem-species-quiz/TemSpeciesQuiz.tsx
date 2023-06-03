@@ -50,7 +50,7 @@ export const TemSpeciesQuiz: FC = () => {
             {/* <Flex direction="column" gap="4px" justify="center"> */}
             <div className="rounded-md border border-solid border-zinc-700">
               <Image
-                loader={imageLoader}
+                unoptimized
                 src={iconImage(currentProblem.species)}
                 alt={currentProblem.species.name}
                 height={80}
@@ -86,7 +86,7 @@ export const TemSpeciesQuiz: FC = () => {
               >
                 <div className="flex items-center gap-4">
                   <Image
-                    loader={imageLoader}
+                    unoptimized
                     className=" rounded-sm bg-zinc-800"
                     src={iconImage(problem.species)}
                     alt={getName(problem.species, language)}
@@ -96,7 +96,7 @@ export const TemSpeciesQuiz: FC = () => {
                   <div className="flex justify-center">
                     {problem.species.types.map((type) => (
                       <Image
-                        loader={imageLoader}
+                        unoptimized
                         key={type}
                         src={temTypeImage(type)}
                         alt={type}
@@ -126,7 +126,7 @@ export const TemSpeciesQuiz: FC = () => {
                 >
                   {selectedTypes[i] ? (
                     <Image
-                      loader={imageLoader}
+                      unoptimized
                       src={temTypeImage(selectedTypes[i])}
                       alt={selectedTypes[i]}
                       height={40}
@@ -149,7 +149,7 @@ export const TemSpeciesQuiz: FC = () => {
                   className=" h-fit w-fit rounded-full p-1.5"
                 >
                   <Image
-                    loader={imageLoader}
+                    unoptimized
                     src={temTypeImage(type)}
                     alt={type}
                     height={50}

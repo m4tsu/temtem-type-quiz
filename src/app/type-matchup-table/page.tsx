@@ -1,7 +1,12 @@
-import { TypeMatchupTable } from '@/feature/type-matchup-table/TypeMatchupTable'
+import dynamic from 'next/dynamic'
+
+const TypeMatchupTableWithoutSSR = dynamic(
+  () => import('@/feature/type-matchup-table'),
+  { ssr: false }
+)
 
 const TypeMatchupTablePage = () => {
-  return <TypeMatchupTable />
+  return <TypeMatchupTableWithoutSSR />
 }
 
 export default TypeMatchupTablePage
