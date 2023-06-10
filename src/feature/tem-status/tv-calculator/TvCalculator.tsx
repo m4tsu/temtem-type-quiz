@@ -15,10 +15,15 @@ import {
   calculateMostDurableTv,
   calculateOthers,
 } from '@/models/species/stats'
+import { katakanaToHiragana } from '@/utils/kana'
 
 import type { FC, PropsWithChildren } from 'react'
 
-const speciesOptions = speciesList.map((species) => ({
+type Option = {
+  value: string
+  label: string
+}
+const speciesOptions: Option[] = speciesList.map((species) => ({
   value: String(species.number),
   label: getName(species, 'ja'),
 }))
@@ -67,6 +72,12 @@ export const TvCalculator: FC = () => {
         searchable
         nothingFound="Not Found"
         maxDropdownHeight={300}
+        filter={(value, item: Option) => {
+          if (item.label.toLowerCase().includes(value.toLowerCase()))
+            return true
+          if (katakanaToHiragana(item.label).includes(value)) return true
+          return false
+        }}
       />
       <table className="w-full table-auto border-collapse border border-zinc-700">
         <thead>
