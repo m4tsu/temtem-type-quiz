@@ -20,7 +20,7 @@ const HomePage = () => {
           耐性表
         </Link>
         <Link href="/tv-calc" className={linkClassName}>
-          Tv Calc
+          耐久計算期
         </Link>
       </div>
     </div>
