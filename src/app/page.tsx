@@ -19,6 +19,9 @@ const HomePage = () => {
         <Link href="/type-matchup-table" className={linkClassName}>
           耐性表
         </Link>
+        <Link href="/tv-calc" className={linkClassName}>
+          Tv Calc
+        </Link>
       </div>
     </div>
   )

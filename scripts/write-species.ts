@@ -1,6 +1,8 @@
-import dataList from "./knownTemtemSpecies.json" assert { type: "json" };
-import { Species } from "../src/models/species";
-import fs from "fs";
+import fs from 'fs'
+
+import dataList from './knownTemtemSpecies.json' assert { type: 'json' }
+
+import type { Species } from '../src/models/species'
 
 const writeSpeciesData = async () => {
   // 最終進化系だけ抽出
@@ -11,18 +13,16 @@ const writeSpeciesData = async () => {
         ({
           number: data.number,
           name: data.name,
+          stats: data.stats,
           types: data.types,
           icon: data.icon,
         } as unknown as Species)
-    );
-  await fs.writeFileSync(
-    "./src/data/species.json",
-    JSON.stringify(speciesList)
-  );
-  console.log("write!!!!");
-};
+    )
+  await fs.writeFileSync('./src/data/species.json', JSON.stringify(speciesList))
+  console.log('write!!!!')
+}
 
 // exec
-(async () => {
-  await writeSpeciesData();
-})();
+;(async () => {
+  await writeSpeciesData()
+})()

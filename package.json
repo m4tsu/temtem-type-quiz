@@ -13,7 +13,8 @@
     "lint-fix": "run-s -c lint-fix:*",
     "lint-fix:eslint": "next lint --fix",
     "lint-fix:prettier": "prettier --write src/**/*.{ts,tsx,js,jsx,json,md}",
-    "write:species": "ts-node --esm scripts/write-ja-name"
+    "write:ja-name": "ts-node --esm scripts/write-ja-name",
+    "write:species": "ts-node --esm scripts/write-species"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",
