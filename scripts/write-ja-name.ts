@@ -1,5 +1,6 @@
-import dataList from './tem-ja.json' assert { type: 'json' }
 import fs from 'fs'
+
+import dataList from './tem-ja.json' assert { type: 'json' }
 
 type TemJa = {
   number: number // 図鑑番号
