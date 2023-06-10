@@ -24,7 +24,7 @@ export default function RootLayout({
               <Container>
                 <nav className="flex items-center justify-between py-2">
                   <Link href="/" className="text-xl font-bold text-white">
-                    TemTemQuiz
+                    TemTem Utils
                   </Link>
                 </nav>
               </Container>
