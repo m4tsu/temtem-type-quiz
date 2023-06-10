@@ -3,18 +3,18 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import { useState } from 'react'
 
-import { Select } from '@/components/ui'
 import { Button } from '@/components/ui/Button'
-import { speciesList } from '@/data/species'
 import { useLanguage } from '@/libs/i18next/i18n'
 import type { Species } from '@/models/species'
-import { findSpecies, getIconImageUrl, getName } from '@/models/species'
+import { getIconImageUrl, getName } from '@/models/species'
 import type { TemType } from '@/models/tem-type'
 import {
   TemTypes,
   calculateEffectiveness,
   temTypeImage,
 } from '@/models/tem-type'
+
+import { TemSelect } from '../tem-utils/TemSelect'
 
 import type { FC } from 'react'
 
@@ -86,28 +86,20 @@ const EffectivenessCell: FC<EffectivenessCellProps> = ({ attack, defense }) => {
   )
 }
 
-const speciesOptions = speciesList.map((species) => ({
-  value: String(species.number),
-  label: getName(species, 'ja'),
-}))
-
 const cellClassName = 'border border-zinc-700 p-1'
 
 export const TypeMatchupTable: FC = () => {
   const [selectedSpeciesList, setSelectedSpeciesList] = useState<Species[]>([])
-  const addSpecies = (speciesNumber: Species['number']) => {
-    const species = findSpecies(speciesNumber)
+  const addSpecies = (species: Species) => {
     setSelectedSpeciesList((prev) => [...prev, species])
   }
-  const removeSpecies = (speciesNumber: Species['number']) => {
+  const removeSpecies = (species: Species) => {
     setSelectedSpeciesList((prev) =>
-      prev.filter((s) => s.number !== speciesNumber)
+      prev.filter((s) => s.number !== species.number)
     )
   }
 
-  const [selectedSpeciesNumber, setSelectedSpeciesNumber] = useState<
-    Species['number'] | null
-  >(null)
+  const [selectedTem, setSelectedTem] = useState<Species | null>(null)
 
   return (
     <div className="flex flex-col gap-4">
@@ -152,7 +144,7 @@ export const TypeMatchupTable: FC = () => {
                 <div className="flex justify-center">
                   <Button
                     aria-label="削除"
-                    onPress={() => removeSpecies(species.number)}
+                    onPress={() => removeSpecies(species)}
                   >
                     ×
                   </Button>
@@ -163,21 +155,10 @@ export const TypeMatchupTable: FC = () => {
         </tbody>
       </table>
       <div className="flex items-center gap-4">
-        <Select
-          data={speciesOptions}
-          onChange={(value) =>
-            setSelectedSpeciesNumber(value ? Number(value) : null)
-          }
-          placeholder="Select TemTem"
-          searchable
-          nothingFound="Not Found"
-          maxDropdownHeight={300}
-        />
+        <TemSelect selectedTem={selectedTem} onSelectTem={setSelectedTem} />
         <Button
-          isDisabled={selectedSpeciesNumber === null}
-          onPress={() =>
-            selectedSpeciesNumber && addSpecies(selectedSpeciesNumber)
-          }
+          isDisabled={selectedTem === null}
+          onPress={() => selectedTem && addSpecies(selectedTem)}
         >
           追加
         </Button>
