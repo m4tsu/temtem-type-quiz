@@ -7,13 +7,6 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'temtem-api.mael.tech',
-        pathname: '/images/portraits/temtem/**',
-      },
-    ],
   },
 }
 
