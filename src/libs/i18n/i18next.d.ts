@@ -1,4 +1,5 @@
-import type { resources, defaultNS } from './i18n'
+import type { resources } from './resources'
+import type { defaultNS } from './settings'
 
 declare module 'i18next' {
   interface CustomTypeOptions {

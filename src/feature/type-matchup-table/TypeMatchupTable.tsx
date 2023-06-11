@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
-import { useLanguage } from '@/libs/i18next/i18n'
+import { useLanguage } from '@/libs/i18n/i18n'
 import type { Species } from '@/models/species'
 import { getIconImageUrl, getName } from '@/models/species'
 import type { TemType } from '@/models/tem-type'

@@ -1,5 +1,5 @@
 import { speciesJaNameMap, speciesMap, speciesNumberList } from '@/data/species'
-import type { Language } from '@/libs/i18next/types'
+import type { Language } from '@/libs/i18n/settings'
 import { randomInt } from '@/utils/randomInt'
 
 import type { TemType } from '../tem-type'

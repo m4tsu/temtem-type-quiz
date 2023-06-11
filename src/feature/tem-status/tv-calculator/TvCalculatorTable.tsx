@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { Input, Label, TextField } from 'react-aria-components'
 
+import { useLanguage } from '@/libs/i18n/i18n'
 import type { Species, Stats } from '@/models/species'
 import { getIconImageUrl } from '@/models/species'
 import { getName } from '@/models/species'
@@ -23,6 +24,7 @@ type Props = {
   species: Species
 }
 export const TvCalculatorTable: FC<Props> = ({ species }) => {
+  const { language } = useLanguage()
   const [totalTv, setTotalTv] = useState(1000)
 
   const mostDurableTvResult = calculateMostDurableTv(species, totalTv)
@@ -49,7 +51,7 @@ export const TvCalculatorTable: FC<Props> = ({ species }) => {
                 src={getIconImageUrl(species)}
                 alt={species.name}
               />
-              {getName(species, 'ja')}
+              {getName(species, language)}
             </div>
           </Cell>
           <Cell>Base</Cell>
