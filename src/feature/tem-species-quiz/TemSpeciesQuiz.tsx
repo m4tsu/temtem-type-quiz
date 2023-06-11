@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 
 import { Button } from '@/components/ui/Button'
-import { useLanguage } from '@/libs/i18n/i18n'
+import { useLanguage, useTranslation } from '@/libs/i18n/i18n'
 import type { Species } from '@/models/species'
 import { getName } from '@/models/species'
 import { TemTypes, temTypeImage } from '@/models/tem-type'
@@ -32,21 +32,20 @@ export const TemSpeciesQuiz: FC = () => {
 
   const { selectedTypes, toggleType, resetSelectedTypes } =
     useSpeciesTypesGuess()
+  const { t } = useTranslation('type-quiz')
 
   return (
     <div className="mx-auto flex max-w-xl flex-col justify-center gap-4">
       <div className="flex w-full flex-col items-center justify-center gap-4">
         {isEnded ? (
           <div className="text-lg font-bold">
-            正解: {correctCount}/{problems.length}
+            {t('score')}: {correctCount}/{problems.length}
           </div>
         ) : (
           <>
             <div className="text-lg font-bold">
-              {round}問目 ({`${problems.length}問中`})
+              {`${round}/${problems.length}`}
             </div>
-            {/* 種族名表示するか選べるようにする？ */}
-            {/* <Flex direction="column" gap="4px" justify="center"> */}
             <div className="rounded-md border border-solid border-zinc-700">
               <Image
                 unoptimized
@@ -56,10 +55,6 @@ export const TemSpeciesQuiz: FC = () => {
                 width={80}
               />
             </div>
-            {/* <Text align="center" size="md" fw="bold">
-                {getName(currentProblem.species, language)}
-              </Text> */}
-            {/* </Flex> */}
           </>
         )}
       </div>
@@ -68,10 +63,10 @@ export const TemSpeciesQuiz: FC = () => {
         <div className="flex flex-col gap-4">
           <div className="grid grid-cols-2 gap-2">
             <Button onPress={reset} className="w-full" slot="aaaaaaa">
-              もう一度
+              {t('retry')}
             </Button>
             <Button onPress={regenerateProblems} className="w-full">
-              別の問題
+              {t('another-quiz')}
             </Button>
           </div>
           <div className="grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-2">
@@ -106,8 +101,7 @@ export const TemSpeciesQuiz: FC = () => {
                   </div>
                 </div>
                 <div className="text-md text-center font-bold text-zinc-100">
-                  <div>{getName(problem.species, 'ja')}</div>
-                  <div>{getName(problem.species, 'en')}</div>
+                  <div>{getName(problem.species, language)}</div>
                 </div>
               </div>
             ))}
@@ -116,7 +110,6 @@ export const TemSpeciesQuiz: FC = () => {
       ) : (
         <div className="flex flex-col gap-4">
           <div className="flex flex-col justify-center gap-4">
-            <div className="text-center text-xl font-bold">選択中</div>
             <div className="flex justify-center gap-1 text-center text-xl font-bold">
               {[0, 1].map((i) => (
                 <div
@@ -159,21 +152,18 @@ export const TemSpeciesQuiz: FC = () => {
             ))}
           </div>
           <div className="mx-auto flex w-8/12 justify-center">
-            {isValidGuess(selectedTypes) ? (
-              <Button
-                onPress={() => {
+            <Button
+              isDisabled={!isValidGuess(selectedTypes)}
+              onPress={() => {
+                if (isValidGuess(selectedTypes)) {
                   answerCurrentProblem(selectedTypes)
                   resetSelectedTypes()
-                }}
-                className="w-full"
-              >
-                決定
-              </Button>
-            ) : (
-              <Button isDisabled className="w-full">
-                決定
-              </Button>
-            )}
+                }
+              }}
+              className="w-full"
+            >
+              {t('submit')}
+            </Button>
           </div>
         </div>
       )}

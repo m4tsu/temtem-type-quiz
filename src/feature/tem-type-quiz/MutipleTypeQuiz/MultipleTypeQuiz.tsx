@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 
 import { Button } from '@/components/ui/Button'
+import { useTranslation } from '@/libs/i18n/i18n'
 import type { TemTypeEffectivenessAgainstMultiple } from '@/models/tem-type'
 import { calculateEffectiveness, temTypeImage } from '@/models/tem-type'
 
@@ -23,18 +24,19 @@ export const MultipleTypeQuiz = () => {
     reset,
     regenerateProblems,
   } = useMultipleTypeQuiz()
+  const { t } = useTranslation('type-quiz')
 
   return (
     <div className="mx-auto flex max-w-xl flex-col justify-center gap-4">
       <div className="flex w-full flex-col items-center justify-center gap-4">
         {isEnded ? (
           <div className="text-lg font-bold">
-            正解: {correctCount}/{problems.length}
+            {t('score')}: {correctCount}/{problems.length}
           </div>
         ) : (
           <>
             <div className="text-lg font-bold">
-              {round}問目 ({`${problems.length}問中`})
+              {`${round}/${problems.length}`}
             </div>
             <div className="flex w-full items-center justify-center">
               <Image
@@ -83,10 +85,10 @@ export const MultipleTypeQuiz = () => {
           <div className="flex flex-col gap-4">
             <div className="grid grid-cols-2 gap-2">
               <Button onPress={reset} className="w-full" slot="aaaaaaa">
-                もう一度
+                {t('retry')}
               </Button>
               <Button onPress={regenerateProblems} className="w-full">
-                別の問題
+                {t('another-quiz')}
               </Button>
             </div>
             <div className="grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-2">

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import { useTranslation } from '@/libs/i18n/i18n.server'
 import type { Language } from '@/libs/i18n/settings'
 
 const linkClassName =
@@ -8,24 +9,26 @@ const linkClassName =
 type Props = {
   params: { lng: Language }
 }
-const HomePage = ({ params: { lng } }: Props) => {
+const HomePage = async ({ params: { lng } }: Props) => {
+  const { t } = await useTranslation(lng, 'home-page')
+
   return (
     <div>
       <div className="flex flex-col gap-4">
         <Link href={`/${lng}/type-quiz/single`} className={linkClassName}>
-          タイプ相性（単）
+          {t('type-compatibility-quiz-single')}
         </Link>
         <Link href={`/${lng}/type-quiz/multiple`} className={linkClassName}>
-          タイプ相性（複合）
+          {t('type-compatibility-quiz-multiple')}
         </Link>
         <Link href={`/${lng}/type-quiz/species`} className={linkClassName}>
-          種族
+          {t('temtem-type-quiz')}
         </Link>
         <Link href={`/${lng}/type-matchup-table`} className={linkClassName}>
-          耐性表
+          {t('type-matchup-chart')}
         </Link>
         <Link href={`/${lng}/tv-calc`} className={linkClassName}>
-          耐久計算期
+          {t('tv-distribution-calculator')}
         </Link>
       </div>
     </div>

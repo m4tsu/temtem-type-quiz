@@ -1,3 +1,6 @@
 {
-  "temtem": "テムテム"
+  "temtem": "テムテム",
+  "resistances": "耐性",
+  "add": "追加",
+  "delete": "削除"
 }

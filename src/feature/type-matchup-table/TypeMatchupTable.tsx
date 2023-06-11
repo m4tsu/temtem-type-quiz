@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
-import { useLanguage } from '@/libs/i18n/i18n'
+import { useLanguage, useTranslation } from '@/libs/i18n/i18n'
 import type { Species } from '@/models/species'
 import { getIconImageUrl, getName } from '@/models/species'
 import type { TemType } from '@/models/tem-type'
@@ -89,6 +89,7 @@ const EffectivenessCell: FC<EffectivenessCellProps> = ({ attack, defense }) => {
 const cellClassName = 'border border-zinc-700 p-1'
 
 export const TypeMatchupTable: FC = () => {
+  const { t } = useTranslation('resource')
   const [selectedSpeciesList, setSelectedSpeciesList] = useState<Species[]>([])
   const addSpecies = (species: Species) => {
     setSelectedSpeciesList((prev) => [...prev, species])
@@ -107,10 +108,10 @@ export const TypeMatchupTable: FC = () => {
         <thead>
           <tr>
             <th className={cellClassName} rowSpan={2}>
-              種族
+              {t('temtem')}
             </th>
             <th className={cellClassName} colSpan={TemTypes.length}>
-              耐性
+              {t('resistances')}
             </th>
             <th rowSpan={2} />
           </tr>
@@ -143,7 +144,7 @@ export const TypeMatchupTable: FC = () => {
               <td className={cellClassName}>
                 <div className="flex justify-center">
                   <Button
-                    aria-label="削除"
+                    aria-label={t('delete')}
                     onPress={() => removeSpecies(species)}
                   >
                     ×
@@ -160,7 +161,7 @@ export const TypeMatchupTable: FC = () => {
           isDisabled={selectedTem === null}
           onPress={() => selectedTem && addSpecies(selectedTem)}
         >
-          追加
+          {t('add')}
         </Button>
       </div>
     </div>
