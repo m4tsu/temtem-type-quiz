@@ -1,11 +1,12 @@
-import dynamic from 'next/dynamic'
+import TemSpeciesQuiz from '@/feature/tem-species-quiz'
+import { dictKeys } from '@/feature/tem-species-quiz/dictKeys'
+import { useTranslation } from '@/libs/i18n/i18n.server'
+import { makeDict } from '@/libs/i18n/utils'
 
-const TemSpeciesQuizWithoutSSR = dynamic(
-  () => import('@/feature/tem-species-quiz'),
-  { ssr: false }
-)
+import type { PageProps } from '../../_types/PageProps'
 
-const SpeciesPage = () => {
-  return <TemSpeciesQuizWithoutSSR />
+const SpeciesPage = async ({ params: { lng } }: PageProps) => {
+  const { t } = await useTranslation(lng, 'type-quiz')
+  return <TemSpeciesQuiz dict={makeDict(t, dictKeys)} />
 }
 export default SpeciesPage

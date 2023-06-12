@@ -4,7 +4,8 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/Button'
-import { useLanguage, useTranslation } from '@/libs/i18n/i18n'
+import { useLanguage } from '@/libs/i18n/i18n'
+import type { PropsWithDict } from '@/libs/i18n/utils'
 import type { Species } from '@/models/species'
 import { getIconImageUrl, getName } from '@/models/species'
 import type { TemType } from '@/models/tem-type'
@@ -16,6 +17,7 @@ import {
 
 import { TemSelect } from '../tem-utils/TemSelect'
 
+import type { dictKeys } from './dictKeys'
 import type { FC } from 'react'
 
 type TemTemCellProps = {
@@ -88,9 +90,8 @@ const EffectivenessCell: FC<EffectivenessCellProps> = ({ attack, defense }) => {
 
 const cellClassName = 'border border-zinc-700 p-1'
 
-export const TypeMatchupTable: FC = () => {
-  const { t } = useTranslation('resource')
-
+type Props = PropsWithDict<typeof dictKeys>
+export const TypeMatchupTable: FC<Props> = ({ dict }) => {
   const [selectedSpeciesList, setSelectedSpeciesList] = useState<Species[]>([])
   const addSpecies = (species: Species) => {
     setSelectedSpeciesList((prev) => [...prev, species])
@@ -109,10 +110,10 @@ export const TypeMatchupTable: FC = () => {
         <thead>
           <tr>
             <th className={cellClassName} rowSpan={2}>
-              {t('temtem')}
+              {dict.temtem}
             </th>
             <th className={cellClassName} colSpan={TemTypes.length}>
-              {t('resistances')}
+              {dict.resistances}
             </th>
             <th rowSpan={2} />
           </tr>
@@ -145,7 +146,7 @@ export const TypeMatchupTable: FC = () => {
               <td className={cellClassName}>
                 <div className="flex justify-center">
                   <Button
-                    aria-label={t('delete')}
+                    aria-label={dict.delete}
                     onPress={() => removeSpecies(species)}
                   >
                     ×
@@ -162,7 +163,7 @@ export const TypeMatchupTable: FC = () => {
           isDisabled={selectedTem === null}
           onPress={() => selectedTem && addSpecies(selectedTem)}
         >
-          {t('add')}
+          {dict.add}
         </Button>
       </div>
     </div>

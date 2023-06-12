@@ -33,8 +33,6 @@ i18next
       useSuspense: true,
     },
   })
-//   return i18next
-// }
 
 const runsOnServerSide = typeof window === 'undefined'
 
@@ -43,7 +41,6 @@ export const LanguageProvider: FC<PropsWithChildren<{ lng: Language }>> = ({
   lng,
   children,
 }) => {
-  console.log('LanguageProvider', lng)
   return (
     <LanguageContext.Provider value={lng}>{children}</LanguageContext.Provider>
   )

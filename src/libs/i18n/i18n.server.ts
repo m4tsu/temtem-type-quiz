@@ -7,6 +7,7 @@ import { getOptions } from './settings'
 
 import type { NameSpaces } from './resources'
 import type { Language } from './settings'
+import type { TFuncKey, TFunction } from 'i18next'
 
 const initI18next = async (lng: Language, ns: NameSpaces) => {
   const i18nInstance = createInstance()
@@ -37,3 +38,6 @@ export const useTranslation = async (
     i18n: i18nextInstance,
   }
 }
+
+export type DictKey = TFuncKey<NameSpaces>
+export type TFunc = TFunction<NameSpaces>

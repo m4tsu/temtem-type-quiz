@@ -24,3 +24,4 @@ export const resources = {
 } as const
 
 export type NameSpaces = keyof (typeof resources)['en']
+export type Resources = (typeof resources)['en']

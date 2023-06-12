@@ -4,7 +4,8 @@ import clsx from 'clsx'
 import Image from 'next/image'
 
 import { Button } from '@/components/ui/Button'
-import { useLanguage, useTranslation } from '@/libs/i18n/i18n'
+import { useLanguage } from '@/libs/i18n/i18n'
+import type { PropsWithDict } from '@/libs/i18n/utils'
 import type { Species } from '@/models/species'
 import { getName } from '@/models/species'
 import { TemTypes, temTypeImage } from '@/models/tem-type'
@@ -12,12 +13,15 @@ import { TemTypes, temTypeImage } from '@/models/tem-type'
 import { isValidGuess, useSpeciesTypesGuess } from './useSpeciesTypesGuess'
 import { useTemSpeciesQuiz } from './useTemSpeciesQuiz'
 
+import type { dictKeys } from './dictKeys'
 import type { FC } from 'react'
 
 const iconImage = (species: Species) =>
   `https://temtem-api.mael.tech${species.icon}`
 
-export const TemSpeciesQuiz: FC = () => {
+export const TemSpeciesQuiz: FC<PropsWithDict<typeof dictKeys>> = ({
+  dict,
+}) => {
   const { language } = useLanguage()
   const {
     round,
@@ -32,14 +36,13 @@ export const TemSpeciesQuiz: FC = () => {
 
   const { selectedTypes, toggleType, resetSelectedTypes } =
     useSpeciesTypesGuess()
-  const { t } = useTranslation('type-quiz')
 
   return (
     <div className="mx-auto flex max-w-xl flex-col justify-center gap-4">
       <div className="flex w-full flex-col items-center justify-center gap-4">
         {isEnded ? (
           <div className="text-lg font-bold">
-            {t('score')}: {correctCount}/{problems.length}
+            {dict.score}: {correctCount}/{problems.length}
           </div>
         ) : (
           <>
@@ -63,10 +66,10 @@ export const TemSpeciesQuiz: FC = () => {
         <div className="flex flex-col gap-4">
           <div className="grid grid-cols-2 gap-2">
             <Button onPress={reset} className="w-full">
-              {t('retry')}
+              {dict.retry}
             </Button>
             <Button onPress={regenerateProblems} className="w-full">
-              {t('another-quiz')}
+              {dict['another-quiz']}
             </Button>
           </div>
           <div className="grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-2">
@@ -162,7 +165,7 @@ export const TemSpeciesQuiz: FC = () => {
               }}
               className="w-full"
             >
-              {t('submit')}
+              {dict.submit}
             </Button>
           </div>
         </div>

@@ -3,15 +3,19 @@ import clsx from 'clsx'
 import Image from 'next/image'
 
 import { Button } from '@/components/ui/Button'
-import { useTranslation } from '@/libs/i18n/i18n'
+import type { PropsWithDict } from '@/libs/i18n/utils'
 import type { TemTypeEffectiveNess } from '@/models/tem-type'
 import { calculateEffectiveness, temTypeImage } from '@/models/tem-type'
 
 import { useSingleTypeQuiz } from './useSingleQuiz'
 
+import type { dictKeys } from './dictKeys'
+import type { FC } from 'react'
+
 const EffectivenessList = [0.5, 1, 2] satisfies TemTypeEffectiveNess[]
 
-export const SingleTypeQuiz = () => {
+type Props = PropsWithDict<typeof dictKeys>
+export const SingleTypeQuiz: FC<Props> = ({ dict }) => {
   const {
     round,
     problems,
@@ -22,14 +26,13 @@ export const SingleTypeQuiz = () => {
     reset,
     regenerateProblems,
   } = useSingleTypeQuiz()
-  const { t } = useTranslation('type-quiz')
 
   return (
     <div className="mx-auto flex max-w-xl flex-col justify-center gap-4">
       <div className="flex w-full flex-col items-center justify-center gap-4">
         {isEnded ? (
           <div className="text-lg font-bold">
-            {t('score')}: {correctCount}/{problems.length}
+            {dict.score}: {correctCount}/{problems.length}
           </div>
         ) : (
           <>
@@ -65,10 +68,10 @@ export const SingleTypeQuiz = () => {
           <div className="flex flex-col gap-4">
             <div className="grid grid-cols-2 gap-2">
               <Button onPress={reset} className="w-full">
-                {t('retry')}
+                {dict.retry}
               </Button>
               <Button onPress={regenerateProblems} className="w-full">
-                {t('another-quiz')}
+                {dict['another-quiz']}
               </Button>
             </div>
             <div className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-2">
