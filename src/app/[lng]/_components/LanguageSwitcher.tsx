@@ -20,7 +20,7 @@ export const LanguageSwitcher = () => {
     if (!pathname) throw new Error('pathname is not found')
     const nextPathname = pathname.replace(languagesPattern, language)
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    router.push(nextPathname as any, {}) // next の 自動生成する RouteType にキャストする手段わからず...
+    router.push(nextPathname as any) // next の 自動生成する RouteType にキャストする手段わからず...
   }
 
   return (

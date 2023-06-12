@@ -84,7 +84,7 @@ export const MultipleTypeQuiz = () => {
         {isEnded ? (
           <div className="flex flex-col gap-4">
             <div className="grid grid-cols-2 gap-2">
-              <Button onPress={reset} className="w-full" slot="aaaaaaa">
+              <Button onPress={reset} className="w-full">
                 {t('retry')}
               </Button>
               <Button onPress={regenerateProblems} className="w-full">

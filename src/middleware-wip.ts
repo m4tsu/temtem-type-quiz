@@ -8,10 +8,11 @@ import type { NextRequest } from 'next/server'
 // 引数が reandonly をうけつけてないので回避
 acceptLanguage.languages(languages as unknown as string[])
 
-export const runtime = 'edge'
 export const config = {
   // matcher: '/:lng*'
-  matcher: ['/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)'],
+  matcher: [
+    '/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|images).*)',
+  ],
 }
 
 const cookieName = 'i18next'

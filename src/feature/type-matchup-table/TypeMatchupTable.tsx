@@ -90,6 +90,7 @@ const cellClassName = 'border border-zinc-700 p-1'
 
 export const TypeMatchupTable: FC = () => {
   const { t } = useTranslation('resource')
+
   const [selectedSpeciesList, setSelectedSpeciesList] = useState<Species[]>([])
   const addSpecies = (species: Species) => {
     setSelectedSpeciesList((prev) => [...prev, species])
